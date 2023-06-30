@@ -1,3 +1,3 @@
 export const isOdd = (num: number): boolean => {
-  return !!(num % 2);
+  return !!(num % 2); // for test
 };
