@@ -1,9 +1,17 @@
 name: branch workflow
 on:
   push:
-    branches: ['!master']
+    branches:
+      - '*' # matches every branch that doesn't contain a '/'
+      - '*/*' # matches every branch containing a single '/'
+      - '**' # matches every branch
+      - '!master' # excludes master
   pull_request:
-    branches: ['!master']
+    branches:
+      - '*' # matches every branch that doesn't contain a '/'
+      - '*/*' # matches every branch containing a single '/'
+      - '**' # matches every branch
+      - '!master' # excludes master
     # Allows you to run this workflow manually from the Actions tab
     workflow_dispatch:
 
