@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "test": "cross-env CI=true jest --watchAll=false",
     "test:ci": "jest --ci",
-    "test:all": "jest --watchAll"
+    "test:all": "jest --watchAll",
+    "coverage": "jest --collectCoverage --"
   },
   "dependencies": {
     "@types/node": "20.3.1",
