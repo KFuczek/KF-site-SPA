@@ -8,7 +8,7 @@ on:
     workflow_dispatch:
 
 jobs:
-  check all:
+  check-all:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
