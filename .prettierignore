@@ -5,3 +5,5 @@ coverage
 .prettierignore
 .eslintignore
 next.config.js
+package-lock.json
+public
