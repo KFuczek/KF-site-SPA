@@ -1,10 +1,12 @@
-'use client';
-import styles from './page.module.css';
+import './globals.css';
+import styles from './page.module.scss';
+import MainFullScreen from '../src/components/mainFullScreen/page';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>home page route</div>
-    </main>
+    <div className={styles.frontPage}>
+      <MainFullScreen />
+      <div className={styles.container}>container</div>
+    </div>
   );
 }

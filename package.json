@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --check . && next lint",
+    "prettier:fix": "prettier --write",
     "format": "prettier --write .",
     "prepare": "husky install",
     "test": "cross-env CI=true jest --watchAll=false",
