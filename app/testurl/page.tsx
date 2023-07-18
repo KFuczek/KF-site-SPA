@@ -8,10 +8,10 @@ async function getData(url: string) {
     cache: 'no-cache',
     credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     redirect: 'follow',
-    referrerPolicy: 'no-referrer',
+    referrerPolicy: 'no-referrer'
     //body: JSON.stringify(data),
   });
 

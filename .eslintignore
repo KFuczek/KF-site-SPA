@@ -1,7 +1,17 @@
 node_modules
+/**/node_modules/*
+node_modules/
+dist
 .next
 .husky
 coverage
 .prettierignore
 .eslintignore
+lint-staged.config.js
 next.config.js
+src/**/*.css
+src/**/*.scss
+src/**/*.module.scss
+app/**/*.css
+app/**/*.scss
+app/**/*.module.scss

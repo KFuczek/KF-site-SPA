@@ -1,0 +1,74 @@
+.container {
+  position: absolute;
+
+  width: 100vw;
+  height: 100%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.bird {
+  width: 28px;
+  height: 17px;
+  position: absolute;
+  background-image: url("http://madflanderz.de/stuff/vogel-1.png");
+
+  &.bird1 {
+    animation: birdPlay1 0.5s steps(7) infinite, move 60s infinite;;
+    top: 100px;
+  }
+
+  &.bird2 {
+    background-image: url("http://madflanderz.de/stuff/vogel-2.png");
+    width: 13px;
+    height: 11px;
+    animation: birdPlay2 0.5s steps(8) infinite, move 70s infinite;;
+    top: 150px;
+  }
+
+  &.bird3 {
+    background-image: url("http://madflanderz.de/stuff/vogel-3.png");
+    width: 29px;
+    height: 23px;
+    animation: birdPlay3 0.4s steps(6) infinite, move 65s infinite;;
+    top: 200px;
+  }
+}
+
+@keyframes birdPlay1 {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -190px;
+  }
+}
+
+@keyframes birdPlay2 {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -104px;
+  }
+}
+
+@keyframes birdPlay3 {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -174px;
+  }
+}
+
+
+@keyframes move {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 100%;
+    top: 500px
+  }
+}

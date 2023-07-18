@@ -1,0 +1,106 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  perspective: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  background-color: black;
+  overflow-x: hidden;
+  border: solid green 1px;
+}
+
+.sunSet {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transform-style: preserve-3d;
+}
+
+.backgroundSky {
+  $yellow: #FFFC3A;
+  $red: #FA1ABB;
+  $cyan: #19EEFE;
+  $blue: #161256;
+  $pink: #F556FB;
+  $sky-color-gradient: black, $blue 25%, $pink;
+  $sun-color-gradient: $yellow, $red;
+
+  z-index: -1;
+  position: absolute;
+  width: 100vw;
+  height: 60%;
+  border: solid red 2px;
+  background: linear-gradient(180deg, $sky-color-gradient);
+  top: 0;
+  //background-image: linear-gradient(transparent 60%, #e90ef5), radial-gradient(transparent 60%, rgba(36, 99, 245, 0.5)), radial-gradient(ellipse at 50% 400%, #e90ef5, transparent 70%);
+  transform: translateZ(-20px) scale(4);
+
+}
+
+
+.sunContainer {
+  position: relative;
+  width: 40vw;
+  height: 40vw; //reato 1
+  z-index: 2;
+  transform: translateZ(-20px) translateY(300px) scale(2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.starsContainer {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  z-index: 1;
+}
+
+.birdsContainer {
+  position: absolute;
+  width: 100vw;
+  top: 200px;
+  height: 50%;
+  z-index: 2;
+}
+
+.gridContainer {
+  position: relative;
+  width: 100vw;
+  height: 100px;
+  z-index: 99;
+  transform: translateZ(-7px) translateY(-280px) scale(2)
+  //transform: translateZ(-30px) translate(0%, 0%) scale(1);
+}
+
+.town {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+  z-index: 180;
+  transform: translateZ(-8px) translateY(-400px) scale(2);
+}
+
+.mountains {
+  position: relative;
+  width: 150vw;
+  height: 600px;
+  z-index: 20;
+  transform: translateZ(-10px) translate(800px, 0) scale(2);
+  border-bottom: solid black 150px;
+  top: 0;
+}
+
+
+.barContainer {
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  transform: translateZ(5px) translate(0, 0) scale(1);
+}

@@ -1,4 +1,5 @@
 node_modules
+dist
 .next
 .husky
 coverage
@@ -7,3 +8,11 @@ coverage
 next.config.js
 package-lock.json
 public
+lint-staged.config.js
+.eslintrc.js
+src/**/*.css
+src/**/*.scss
+src/**/*.module.scss
+app/*.css
+app/*.scss
+app/*.module.scss
