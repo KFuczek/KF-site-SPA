@@ -17,13 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <Navbar />
+    <html lang="en">
       <Suspense fallback={<Loading />}>
-        <body className={inter.className}>
-          <>{children}</>
+        <body className={`layout-root ${inter.className}`}>
+          <div className={'navbar-root'}>
+            <Navbar />
+          </div>
+          <div className={'children-root'}>{children}</div>
         </body>
       </Suspense>
-    </>
+    </html>
   );
 }

@@ -41,24 +41,6 @@ $base-speed: 1.5s;
     );
   }
 
-  // reflection
-  //&:before {
-  //  content: "";
-  //  position: absolute;
-  //  inset: 0;
-  //  background-image: linear-gradient(
-  //                  to top,
-  //                  #{$labs-sys-color-sun-1},
-  //                  #{$labs-sys-color-sun-2} 55%,
-  //                  #{$labs-sys-color-triangle} 65%,
-  //                  #{$labs-sys-color-sun-2} 69%
-  //  );
-  //  border-radius: inherit;
-  //  transform: translateY(100%) rotateX(40deg) scaleY(1.2);
-  //  perspective: 6.25rem;
-  //  filter: blur(20px);
-  //}
-
   filter: drop-shadow(0 0 4rem #{$labs-sys-color-sun-glow});
 }
 

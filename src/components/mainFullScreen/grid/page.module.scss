@@ -7,21 +7,35 @@ $labs-sys-color-grid-glow: #df7373;
 
 $base-speed: 12s;
 
-.bottom-overlay {
-  perspective: 14.5rem;
-  flex: 0 0 12.5rem;
-  position: absolute;
-  z-index: 10000;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  height: 12.5rem;
-  background: radial-gradient(
-                  ellipse at center,
-                  transparent 50%,
-                  rgba(30, 30, 30, 0.9) 70%
-  );
+.gridComponent {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
 }
+
+.grid {
+  position: absolute;
+  inset: 0;
+  --line-width: 0.0635rem;
+  background: linear-gradient(
+                  to right,
+                  #{$labs-sys-color-grid} var(--line-width),
+                  transparent var(--line-width)
+  ),
+  linear-gradient(
+                  to bottom,
+                  #{$labs-sys-color-grid} var(--line-width),
+                  transparent var(--line-width)
+  );
+  background-size: 30px, 1px 30px;
+  transform: rotateX(47deg) scale(6) translateZ(-140px);
+  animation: grid calc(#{$base-speed} * 1) linear infinite;
+  border-top: 1px solid  #{$labs-sys-color-grid};
+  filter: drop-shadow(0 0 2px #{$labs-sys-color-grid-glow});
+
+}
+
 
 .bottom {
   background: black;
@@ -29,34 +43,11 @@ $base-speed: 12s;
   flex: 0 0 12.5rem;
   position: relative;
   width: 100vw;
-  height: 200px;
-
-  &:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    --line-width: 0.0635rem;
-    background: linear-gradient(
-                    to right,
-                    #{$labs-sys-color-grid} var(--line-width),
-                    transparent var(--line-width)
-    ),
-    linear-gradient(
-                    to bottom,
-                    #{$labs-sys-color-grid} var(--line-width),
-                    transparent var(--line-width)
-    );
-    background-size: 2rem 125rem, 125rem 2rem;
-    transform: rotateX(53deg) scale(1.8) translateZ(43px);
-    animation: grid calc(#{$base-speed} * 1) linear infinite;
-    border-top: 1px solid  #{$labs-sys-color-grid};
-    filter: drop-shadow(0 0 2px #{$labs-sys-color-grid-glow});
-  }
 }
 
 @keyframes grid {
   from {
-    background-position-y: -30rem;
+    background-position-y: -200px;
   }
 
   to {

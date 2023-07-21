@@ -1,6 +1,11 @@
 'use client';
 import styles from './index.module.scss';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
-  return <div className={styles.navbar}></div>;
+  const [isSSR, setIsSSR] = useState(true);
+  useEffect(() => {
+    setIsSSR(false);
+  }, []);
+  return isSSR ? null : <div className={styles.navbar}></div>;
 }

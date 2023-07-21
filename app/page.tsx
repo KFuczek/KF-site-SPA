@@ -10,10 +10,10 @@ export default function Home() {
     setIsSSR(false);
   }, []);
 
-  return isSSR ? (
+  return isSSR ? null : (
     <div className={styles.frontPage}>
       <MainFullScreen />
       <div className={styles.container}>container</div>
     </div>
-  ) : null;
+  );
 }
