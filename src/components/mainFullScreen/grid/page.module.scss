@@ -17,14 +17,14 @@ $base-speed: 12s;
 
 .grid {
   position: absolute;
-  width: 300vw;
-  left: -500px;
+  inset: 0 0 0 -40%;
+  width: 500vw;
   height: 130%;
   background-image: -webkit-linear-gradient(top, #CF33D9 2px, transparent 2px), -webkit-linear-gradient(left, #CF33D9 2px, transparent 2px);
   background-size: 50px 20px, 80px 80px;
   background-position: -1px -1px, -1px -1px;
   transform: rotateX(45deg);
-  animation: moveUp 3s infinite linear;
+  animation: moveUp 5s infinite linear;
 }
 
 .bottom {
@@ -38,10 +38,11 @@ $base-speed: 12s;
 }
 
 @keyframes moveUp {
+
   0% {
-    background-position: -1px -1px, -1px -1px;
+    background-position: -50px -50px, -1px -1px;
   }
   100% {
-    background-position: -50px -50px, -1px -1px;
+    background-position: -1px -1px, -1px -1px;
   }
 }
