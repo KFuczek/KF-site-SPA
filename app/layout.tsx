@@ -20,7 +20,9 @@ export default function RootLayout({
     <>
       <Navbar />
       <Suspense fallback={<Loading />}>
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <>{children}</>
+        </body>
       </Suspense>
     </>
   );
