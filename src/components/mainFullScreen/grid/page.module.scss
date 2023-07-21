@@ -25,6 +25,7 @@ $base-speed: 12s;
   background-position: -1px -1px, -1px -1px;
   transform: rotateX(45deg);
   animation: moveUp 5s infinite linear;
+  animation-direction: reverse;
 }
 
 .bottom {
@@ -38,11 +39,13 @@ $base-speed: 12s;
 }
 
 @keyframes moveUp {
-
   0% {
+    background-position: -1px -1px, -1px -1px;
+  }
+  50% {
     background-position: -50px -50px, -1px -1px;
   }
   100% {
-    background-position: -1px -1px, -1px -1px;
+    background-position: -100px -100px, -1px -1px;
   }
 }
