@@ -12,7 +12,7 @@
 }
 
 .sunSet {
-  height: 100%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,11 +32,11 @@
   z-index: -1;
   position: absolute;
   width: 100vw;
-  height: 60%;
+  height: 100%;
   background: linear-gradient(180deg, $sky-color-gradient);
   top: 0;
   //background-image: linear-gradient(transparent 60%, #e90ef5), radial-gradient(transparent 60%, rgba(36, 99, 245, 0.5)), radial-gradient(ellipse at 50% 400%, #e90ef5, transparent 70%);
-  transform: translateZ(-20px) scale(4);
+  transform: translateZ(-40px) scale(5);
 
 }
 
@@ -46,7 +46,7 @@
   width: 40vw;
   height: 40vw; //reato 1
   z-index: 2;
-  transform: translateZ(-20px) translateY(300px) scale(2);
+  transform: translateZ(-30px) translateY(-50px) scale(3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,30 +70,49 @@
 
 .gridContainer {
   position: relative;
-  width: 100vw;
-  height: 200px;
-  z-index: 181;
-  transform: translateZ(-7px) translateY(-200px) scale(2);
+  width: 200vw;
+  z-index: 178;
+  transform: translateZ(-8px) translateY(-350px) scale(1);
   bottom: 0;
-  //transform: translateZ(-30px) translate(0%, 0%) scale(1);
 }
 
-.town {
+.cityWrapper {
   position: relative;
   width: 100vw;
   height: 500px;
   z-index: 480;
-  transform: translateZ(-8px) translateY(-350px) scale(2);
+  transform: translateZ(-10px) translateY(-250px) scale(2);
+  border-bottom: solid black 100px;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 467px;
+    top: -100px;
+    z-index: -1;
+    position: relative;
+    background-color: black;
+  }
 }
 
-.mountains {
+.mountainsWrapper {
   position: relative;
-  width: 150vw;
+  width: 100vw;
   height: 600px;
   z-index: 179;
-  transform: translateZ(-10px) translate(700px, 0) scale(3);
-  border-bottom: solid black 150px;
+  transform: translateZ(-20px) translate(0px, -300px) scale(3);
   top: 0;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    top: -50px;
+    height: 150px;;
+    position: relative;
+    background-color: black;
+  }
 }
 
 

@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
 
-export default function Home() {
-  return <div className={styles.sun}></div>;
+export default function Sun() {
+  return <div className={styles.sun} />;
 }

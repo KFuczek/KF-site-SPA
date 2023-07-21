@@ -7,5 +7,5 @@ export default function Navbar() {
   useEffect(() => {
     setIsSSR(false);
   }, []);
-  return isSSR ? null : <div className={styles.navbar}></div>;
+  return isSSR ? null : <div className={styles.navbar} />;
 }

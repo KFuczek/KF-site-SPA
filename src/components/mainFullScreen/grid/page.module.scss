@@ -12,45 +12,36 @@ $base-speed: 12s;
   display: flex;
   flex-direction: column;
   overflow-y: hidden;
+  align-items: center;
 }
 
 .grid {
   position: absolute;
-  inset: 0;
-  --line-width: 0.0635rem;
-  background: linear-gradient(
-                  to right,
-                  #{$labs-sys-color-grid} var(--line-width),
-                  transparent var(--line-width)
-  ),
-  linear-gradient(
-                  to bottom,
-                  #{$labs-sys-color-grid} var(--line-width),
-                  transparent var(--line-width)
-  );
-  background-size: 30px, 1px 30px;
-  transform: rotateX(47deg) scale(6) translateZ(-140px);
-  animation: grid calc(#{$base-speed} * 1) linear infinite;
-  border-top: 1px solid  #{$labs-sys-color-grid};
-  filter: drop-shadow(0 0 2px #{$labs-sys-color-grid-glow});
-
+  width: 300vw;
+  left: -500px;
+  height: 130%;
+  background-image: -webkit-linear-gradient(top, #CF33D9 2px, transparent 2px), -webkit-linear-gradient(left, #CF33D9 2px, transparent 2px);
+  background-size: 50px 20px, 80px 80px;
+  background-position: -1px -1px, -1px -1px;
+  transform: rotateX(45deg);
+  animation: moveUp 3s infinite linear;
 }
-
 
 .bottom {
-  background: black;
-  perspective: 14.5rem;
-  flex: 0 0 12.5rem;
-  position: relative;
-  width: 100vw;
+  display: flex;
+  align-items: center;
+  width: 150%;
+  height: 100%;
+  position: absolute;
+  perspective: 100px;
+  perspective-origin: 49% 45%;
 }
 
-@keyframes grid {
-  from {
-    background-position-y: -200px;
+@keyframes moveUp {
+  0% {
+    background-position: -1px -1px, -1px -1px;
   }
-
-  to {
-    background-position-y: 0%;
+  100% {
+    background-position: -50px -50px, -1px -1px;
   }
 }

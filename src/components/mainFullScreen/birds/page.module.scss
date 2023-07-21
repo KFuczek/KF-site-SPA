@@ -14,7 +14,7 @@
   background-image: url("http://madflanderz.de/stuff/vogel-1.png");
 
   &.bird1 {
-    animation: birdPlay1 0.5s steps(7) infinite, move 60s infinite;;
+    animation: birdPlay1 1.7s steps(7) infinite, move 110s infinite;;
     top: 100px;
   }
 
@@ -22,7 +22,7 @@
     background-image: url("http://madflanderz.de/stuff/vogel-2.png");
     width: 13px;
     height: 11px;
-    animation: birdPlay2 0.5s steps(8) infinite, move 70s infinite;;
+    animation: birdPlay2 1.6s steps(8) infinite, move 120s infinite;;
     top: 150px;
   }
 
@@ -30,7 +30,7 @@
     background-image: url("http://madflanderz.de/stuff/vogel-3.png");
     width: 29px;
     height: 23px;
-    animation: birdPlay3 0.4s steps(6) infinite, move 65s infinite;;
+    animation: birdPlay3 0.9s steps(6) infinite, move 125s infinite;;
     top: 200px;
   }
 }
@@ -69,6 +69,6 @@
   }
   100% {
     left: 100%;
-    top: 500px
+    top: 250px
   }
 }
