@@ -18,7 +18,7 @@ $base-speed: 12s;
 .grid {
   position: absolute;
   inset: 0 0 0 -40%;
-  width: 500vw;
+  width: 600vw;
   height: 130%;
   background-image: -webkit-linear-gradient(top, #CF33D9 2px, transparent 2px), -webkit-linear-gradient(left, #CF33D9 2px, transparent 2px);
   background-size: 50px 20px, 80px 80px;
@@ -36,6 +36,18 @@ $base-speed: 12s;
   position: absolute;
   perspective: 100px;
   perspective-origin: 49% 45%;
+
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 399%;
+    background-color: black;
+    bottom: -333%;
+    z-index: -1;
+  }
+
+
 }
 
 @keyframes moveUp {

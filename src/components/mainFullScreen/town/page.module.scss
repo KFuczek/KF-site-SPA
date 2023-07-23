@@ -1,4 +1,48 @@
-.town {
+.cityWrap {
+  position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.city {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: flex-end;
+}
+
+.retroBuilding {
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background-image: linear-gradient(0deg, rgba(17, 17, 34, 0), #112 30px, #000);
+
+  &:nth-child( odd ) {
+    background-image: linear-gradient(0deg, rgba(24, 24, 42, 0), #223 30px, #000);
+  }
+
+  &:nth-child(6n) {
+    background-image: linear-gradient(0deg, rgba(24, 24, 42, 0), #751e69 30px, #861212)
+  }
+
+  &:nth-child( 4n ) {
+    background-image: linear-gradient(0deg, rgba(24, 24, 42, 0), #751e69 30px, #000);
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: calc(-1px - 5%);
+      bottom: 100%;
+      width: 5%;
+      min-width: 2px;
+      height: 15%;
+      background-color: #000;
+    }
+  }
 }
