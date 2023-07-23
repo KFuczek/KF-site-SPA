@@ -1,5 +1,6 @@
 import styles from './page.module.scss';
 import { shuffle } from '../../../helpers/array-helpers';
+import { ReactNode } from 'react';
 
 export default function Town() {
   const generateTown = (
@@ -307,10 +308,9 @@ export default function Town() {
     const randomSortedBuildings = shuffle<HTMLElement>(towns);
 
     console.dir(randomSortedBuildings);
-    return randomSortedBuildings;
+    return randomSortedBuildings as unknown as ReactNode;
   };
 
-  // zrobić ratio dla left i potem każda partie popszesówac
   return (
     <div className={styles.cityWrap}>
       <div className={styles.city}>{drawTowns()}</div>
