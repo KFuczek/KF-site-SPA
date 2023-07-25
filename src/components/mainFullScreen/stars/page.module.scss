@@ -8,15 +8,25 @@
   overflow: hidden;
 }
 
-.star {
+.shootingStar {
   position: absolute;
   width: 2px;
   height: 2px;
   background-color: #fff;
-  animation: falling-stars linear infinite;
+  animation: shooting-stars linear infinite;
 }
 
-@keyframes falling-stars {
+.normalStar {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border: 4px dotted #eeeeee;
+  border-radius: 50%;
+
+}
+
+@keyframes shooting-stars {
   0% {
     opacity: 1;
     transform: translateY(0);
@@ -27,31 +37,31 @@
   }
 }
 
-.star:nth-child(1) {
+.shootingStar:nth-child(1) {
   top: -10px;
   left: 20%;
   animation-duration: 2s;
 }
 
-.star:nth-child(2) {
+.shootingStar:nth-child(2) {
   top: -20px;
   left: 40%;
   animation-duration: 3s;
 }
 
-.star:nth-child(3) {
+.shootingStar:nth-child(3) {
   top: -30px;
   left: 60%;
   animation-duration: 4s;
 }
 
-.star:nth-child(4) {
+.shootingStar:nth-child(4) {
   top: -40px;
   left: 80%;
   animation-duration: 5s;
 }
 
-.star:nth-child(5) {
+.shootingStar:nth-child(5) {
   top: -50px;
   left: 90%;
   animation-duration: 6s;
