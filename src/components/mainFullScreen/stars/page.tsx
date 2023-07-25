@@ -19,7 +19,7 @@ export default function Stars() {
   );
 }
 
-const createStars = (amountOfStars): JSX.Element[] => {
+const createStars = (amountOfStars: number): JSX.Element[] => {
   const starColours = ['yellow', 'lightblue', 'white', '#f7ea8a'];
   const starsArray = [];
   for (let i = 0; i < amountOfStars; i++) {
