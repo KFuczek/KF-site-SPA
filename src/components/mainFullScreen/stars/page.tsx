@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 import { generateRandomInteger } from '../../../helpers/maths-helper';
 
 export default function Stars() {
-  const amountOfStars = generateRandomInteger(50, 100);
+  const amountOfStars = generateRandomInteger(100, 200);
   const stars = createStars(amountOfStars);
 
   return (
@@ -24,10 +24,10 @@ const createStars = (amountOfStars: number): JSX.Element[] => {
   const starsArray = [];
   for (let i = 0; i < amountOfStars; i++) {
     const topPosition = generateRandomInteger(1, 70);
-    let leftPosition = generateRandomInteger(1, 50);
+    const randomNum = generateRandomInteger(0, 10);
+    const leftPosition = generateRandomInteger(1, 90) + randomNum;
     const scale = generateRandomInteger(1, 10) / 50;
     const rColour = generateRandomInteger(0, 3);
-    leftPosition += +generateRandomInteger(1, 50);
     const star = createRandomStars(
       starColours[rColour],
       topPosition,

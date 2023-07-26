@@ -7,6 +7,7 @@ import Stars from './stars/page';
 import Birds from './birds/page';
 import Town from './town/page';
 import Mountains from './mountains/page';
+import ScyText from './scyText/page';
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
           </div>
           <div className={styles.birdsContainer}>
             <Birds />
+          </div>
+          <div className={styles.textContainer}>
+            <ScyText />
           </div>
           <div className={styles.sunContainer}>
             <Sun />
