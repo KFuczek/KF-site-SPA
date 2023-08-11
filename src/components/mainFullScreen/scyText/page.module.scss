@@ -9,6 +9,14 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  height: 100%;
+}
+
+.textWrapper {
+  height: 100%;
+  position: relative;
+  width: fit-content;
+  right: 10%;
 }
 
 .text {
@@ -18,9 +26,7 @@
   align-items: center;
   justify-content: center;
   width: fit-content;
-  right: 25%;
-  transform: translateX(100%);
-
+  top: 0;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -66,7 +72,7 @@
   text-transform: uppercase;
   letter-spacing: -12px;
   transform: rotate(-10deg) skew(-15deg);
-  margin-bottom: -140px;
+  margin-bottom: -120px;
 }
 
 .line2 > .letter {
@@ -100,8 +106,9 @@
 
 .triangle {
   z-index: 0;
-  position: relative;
-  inset: -37px 0px 0px 438px;
+  position: absolute;
+  top: 0;
+  left: 10%;
   border-left: 250px solid transparent;
   border-right: 450px solid transparent;
   border-bottom: 400px solid rgba(5, 5, 5, 0.33);
