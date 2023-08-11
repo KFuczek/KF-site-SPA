@@ -1,4 +1,5 @@
 'use client';
+import { forwardRef } from 'react';
 import styles from './page.module.scss';
 import Sun from './sun/page';
 import Grid from './grid/page';
@@ -9,10 +10,10 @@ import Town from './town/page';
 import Mountains from './mountains/page';
 import ScyText from './scyText/page';
 
-export default function Home() {
-  return (
+const mainFullScreen = forwardRef(
+  (props: any, ref: React.Ref<HTMLDivElement>) => (
     <>
-      <div className={styles.wrapper}>
+      <div ref={ref} className={styles.wrapper}>
         <div className={styles.sunSet}>
           <div className={styles.backgroundSky} />
           <div className={styles.starsContainer}>
@@ -40,5 +41,9 @@ export default function Home() {
         </div>
       </div>
     </>
-  );
-}
+  )
+);
+
+mainFullScreen.displayName = 'Main_Full_Screen';
+
+export default mainFullScreen;
