@@ -3,13 +3,13 @@ import './globals.css';
 import styles from './page.module.scss';
 import MainFullScreen from '../src/components/mainFullScreen/page';
 import MainIntersectionAnimations from '../src/components/mainIntersectionAnimations/page';
-import { useEffect, useState, useRef, useCallback, RefObject } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { toggleNavbar } from '../src/components/Navbar';
 
 export default function Home() {
   const [isSSR, setIsSSR] = useState(true);
   const [refAvailable, setRefAvailable] = useState(false);
-  const mainFullscreenRef: RefObject<HTMLElement> = useRef(null);
+  const mainFullscreenRef = useRef<Element | null>(null);
   useEffect(() => {
     setIsSSR(false);
   }, []);
@@ -34,6 +34,8 @@ export default function Home() {
     );
 
     if (mainFullscreenRef.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       intersectionObserver.observe(mainFullscreenRef.current);
     }
   }, [refAvailable]);

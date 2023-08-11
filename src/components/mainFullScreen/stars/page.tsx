@@ -49,8 +49,8 @@ function createRandomStars(
   const type2 = !(topPosition % 5) && 2;
   const type3 = !(topPosition % 4) && 6;
   const type4 = !(topPosition % 3) && 8;
-  const delay = type1 || type2 || type3 || type4;
-  const blinkingPeriod = generateRandomInteger(1, 3);
+  // const delay = type1 || type2 || type3 || type4;
+  // const blinkingPeriod = generateRandomInteger(1, 3);
 
   const generatedStyle = {
     backgroundColor: starColor,

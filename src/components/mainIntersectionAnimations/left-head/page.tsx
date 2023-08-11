@@ -1,12 +1,12 @@
 'use client';
 import styles from './page.module.scss';
-import { RefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 export default function LeftHead() {
   const [refAvailable, setRefAvailable] = useState(false);
-  const leftHeadRef: RefObject<HTMLElement> = useRef(null);
+  const leftHeadRef = useRef<HTMLDivElement | null>(null);
 
-  const setRef = useCallback((node: HTMLElement) => {
+  const setRef = useCallback((node: HTMLDivElement) => {
     console.log('sethook', node, leftHeadRef);
     if (!leftHeadRef.current && node) {
       leftHeadRef.current = node;
@@ -15,12 +15,10 @@ export default function LeftHead() {
   }, []);
 
   useEffect(() => {
-    console.log('moj efekt');
     const intersectionObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          console.log('entry', entry);
-          leftHeadRef.current.classList.toggle(
+          leftHeadRef.current?.classList.toggle(
             styles.show,
             entry.isIntersecting
           );
@@ -30,12 +28,18 @@ export default function LeftHead() {
     );
 
     if (leftHeadRef.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       intersectionObserver.observe(leftHeadRef.current);
     }
   }, [refAvailable]);
 
   return (
-    <div ref={setRef} className={`${styles.leftHeadAnimation}`}>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    <div // @ts-ignore
+      ref={setRef as HTMLDivElement}
+      className={`${styles.leftHeadAnimation}`}
+    >
       Head animation
     </div>
   );
