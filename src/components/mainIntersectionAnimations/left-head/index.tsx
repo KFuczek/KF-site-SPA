@@ -1,8 +1,8 @@
 'use client';
-import styles from './page.module.scss';
+import styles from './styles.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import Bubble from './bubble/page';
+import Bubble from './bubble';
 
 export default function LeftHeadContainer() {
   const [refAvailable, setRefAvailable] = useState(false);

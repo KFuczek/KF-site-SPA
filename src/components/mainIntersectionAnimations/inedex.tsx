@@ -1,6 +1,6 @@
 'use client';
-import styles from './page.module.scss';
-import LeftHeadAnimation from './left-head/page';
+import styles from './styles.module.scss';
+import LeftHeadAnimation from './left-head';
 
 export default function IntersectionAnimations() {
   return (
@@ -9,3 +9,5 @@ export default function IntersectionAnimations() {
     </div>
   );
 }
+
+// toDo: quotes in local store

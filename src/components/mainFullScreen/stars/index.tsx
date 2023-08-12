@@ -1,5 +1,5 @@
 'use client';
-import styles from './page.module.scss';
+import styles from './styles.module.scss';
 import { generateRandomInteger } from '../../../helpers/maths-helper';
 
 export default function Stars() {

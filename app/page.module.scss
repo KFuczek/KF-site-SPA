@@ -1,5 +1,5 @@
 .frontPage {
-  height: auto;
+  height: 100vh;
 }
 
 .container {
@@ -8,10 +8,21 @@
   background-color: green;
 }
 
-.errorDescription {
-
+.scrollSnap {
+  scroll-snap-type: y mandatory;
 }
 
-.errorMain {
+.section1 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
 
+.section2 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.section3 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }

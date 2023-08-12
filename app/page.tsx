@@ -1,8 +1,8 @@
 'use client';
 import './globals.css';
 import styles from './page.module.scss';
-import MainFullScreen from '../src/components/mainFullScreen/page';
-import MainIntersectionAnimations from '../src/components/mainIntersectionAnimations/page';
+import MainFullScreen from '../src/components/mainFullScreen';
+import MainIntersectionAnimations from '../src/components/mainIntersectionAnimations/inedex';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { toggleNavbar } from '../src/components/Navbar';
 
@@ -41,10 +41,16 @@ export default function Home() {
   }, [refAvailable]);
 
   return isSSR ? null : (
-    <div className={styles.frontPage}>
-      <MainFullScreen ref={setRef} />
-      <MainIntersectionAnimations />
-      <div className={styles.container}>container</div>
-    </div>
+    <>
+      <section className={styles.section1}>
+        <MainFullScreen ref={setRef} />
+      </section>
+      <section className={styles.section2}>
+        <MainIntersectionAnimations />
+      </section>
+      <section className={styles.section3}>
+        <div className={styles.container}>container</div>
+      </section>
+    </>
   );
 }

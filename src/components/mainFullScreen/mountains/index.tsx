@@ -1,4 +1,4 @@
-import styles from './page.module.scss';
+import styles from './styles.module.scss';
 import Image from 'next/image';
 
 export default function Mountains() {

@@ -20,3 +20,9 @@
     top: 0;
     z-index: 100;
 }
+
+.children-root {
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow: scroll;
+}

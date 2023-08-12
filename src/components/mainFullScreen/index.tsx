@@ -1,14 +1,14 @@
 'use client';
 import { forwardRef } from 'react';
-import styles from './page.module.scss';
+import styles from './styles.module.scss';
 import Sun from './sun/page';
-import Grid from './grid/page';
-import Bar from './bar/page';
-import Stars from './stars/page';
-import Birds from './birds/page';
+import Grid from './grid';
+import Bar from './bar';
+import Stars from './stars';
+import Birds from './birds';
 import Town from './town/page';
-import Mountains from './mountains/page';
-import ScyText from './scyText/page';
+import Mountains from './mountains';
+import SkyText from './skyText';
 
 const mainFullScreen = forwardRef((props: any, ref: any) => (
   <>
@@ -23,7 +23,7 @@ const mainFullScreen = forwardRef((props: any, ref: any) => (
           <Birds />
         </div>
         <div className={styles.textContainer}>
-          <ScyText />
+          <SkyText />
         </div>
         <div className={styles.sunContainer}>
           <Sun />
