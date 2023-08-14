@@ -28,7 +28,7 @@ export default function LeftHeadContainer() {
           );
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
 
     if (leftHeadContainerRef.current) {

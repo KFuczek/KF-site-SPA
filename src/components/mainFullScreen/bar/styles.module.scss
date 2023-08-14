@@ -16,7 +16,7 @@
   font-family: streamster, serif;
   //font-family: "Vibur", sans-serif;
 
-  font-size: 6rem;
+  font-size: clamp(20px, 8vw, 6rem);
   text-shadow: 0 0 8px #fff,
   0 0 24px #fff,
   0 0 32px #f80022,

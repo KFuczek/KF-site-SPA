@@ -1,8 +1,9 @@
 .bubble {
   position: absolute;
-  width: 200px;
-  left: 80%;
-  top: 40%;
+  width: clamp(80px, 30vw, 200px);
+  transform: translate(0%, -50%);
+  top: 0;
+  left: 50%;
 }
 
 .bubbleText {
@@ -10,4 +11,7 @@
   left: 50%;
   top: 25%;
   transform: translate(-50%, -50%);
+  width: max-content;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: clamp(10px, 3vw, 20px);
 }
