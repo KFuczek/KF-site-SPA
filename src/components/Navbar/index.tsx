@@ -15,7 +15,6 @@ export default function Navbar() {
 export const toggleNavbar = (show: boolean) => {
   const navbar: ReactElement | HTMLElement | null =
     document.getElementById('main-navbar');
-  console.dir(navbar);
   if (!navbar) {
     return;
   }

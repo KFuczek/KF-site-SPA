@@ -1,0 +1,176 @@
+$primary: #fff;
+$bg-color: rgb(5, 53, 61);
+$bg-envelope-color: #f5edd1;
+$envelope-tab: #ecdeb8;
+$envelope-cover: #e6cfa7;
+$shadow-color: rgba(0, 0, 0, 0.2);
+$txt-color: #444;
+$heart-color: rgb(252, 8, 231);
+$breakpoint-mobile: 420px;
+
+.envelopeContainer {
+  position: relative;
+  height: fit-content;
+  right: 20%;
+  top: 15%;
+  display: block;
+  place-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    top: 5%;
+  }
+}
+
+.envelopeWrapper {
+  background: $bg-envelope-color;
+  box-shadow: 0 0 40px $shadow-color;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 30vw;
+    height: 23vw;
+  }
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-top: 130px solid $envelope-tab;
+  border-right: 150px solid transparent;
+  border-left: 150px solid transparent;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
+
+  @media (max-width: $breakpoint-mobile) {
+    border-top: 13vw solid $envelope-tab;
+    border-right: 16vw solid transparent;
+    border-left: 16vw solid transparent;
+  }
+}
+
+.envelope:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height: 0px;
+  border-top: 130px solid transparent;
+  border-right: 150px solid $envelope-cover;
+  border-bottom: 100px solid $envelope-cover;
+  border-left: 150px solid $envelope-cover;
+
+  @media (max-width: $breakpoint-mobile) {
+    border-top: 13vw solid transparent;
+    border-right: 15vw solid $envelope-cover;
+    border-bottom: 10vw solid $envelope-cover;
+    border-left: 15vw solid $envelope-cover;
+  }
+}
+
+.letter {
+  position: absolute;
+  display: contents;
+  bottom: 0;
+  height: 100%;
+  width: fit-content;
+  background-color: black;
+  text-align: center;
+  transition: all 1s ease-in-out;
+  box-shadow: 0 0 5px $shadow-color;
+  border: 2px solid gold;
+}
+
+.button {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  background: $heart-color;
+  z-index: 4;
+  transform: translateY(10px) rotate(45deg);
+  transition: transform 0.5s ease-in-out 1s;
+  box-shadow: 0 1px 6px $shadow-color;
+  cursor: pointer;
+}
+
+.button:before,
+.button:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: $heart-color;
+  border-radius: 50%;
+}
+
+.button:before {
+  top: -7.5px;
+}
+
+.button:after {
+  right: 7.5px;
+}
+
+.flap:before {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.flap {
+  .letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    bottom: 100px;
+    overflow: hidden;
+    transform: translateY(-50%);
+    transition-delay: 1s;
+    animation-name: openLetter;
+    animation-fill-mode: forwards;
+    animation-duration: 6s;
+    animation-delay: 3s;
+  }
+
+  @keyframes openLetter {
+    0% {
+      z-index: 10;
+    }
+    50% {
+      z-index: 10;
+      width: 100%;
+      height: min-content;
+      transform: scale(1.25);
+    }
+    100% {
+      top: 50px;
+      z-index: 10;
+      width: 30vw;
+      height: fit-content;
+      max-height: 400px;
+      transform: scale(1.5);
+
+      @media (max-width: $breakpoint-mobile) {
+        top: -150px;
+      }
+    }
+  }
+}
+
+.buttonOpen {
+  left: 0;
+  transform: translate(10px, 10px) rotate(90deg);
+  transition-delay: 0.4s;
+}

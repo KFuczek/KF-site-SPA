@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+$breakpoint-mobile: 420px;
+$black: #000;
+$brass: #b6a644;
+$font-family: "Poiret One", cursive;
+
+.card {
+  background: $black;
+  color: $brass;
+  font-family: $font-family;
+  text-align: center;
+  border: 2px solid $brass;
+  margin: 20px 40px;
+  height: fill-available;
+  width: fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  @media (max-width: $breakpoint-mobile) {
+    border: 0.5px solid $brass;
+    margin: 5px 10px;
+  }
+
+  &:after {
+    content: "";
+    margin: 20px 30px;
+    border: 2px solid $brass;
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    right: 0;
+    bottom: 9px;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin: 20px;
+      top: -13px;
+      left: -12px;
+      right: -12px;
+      bottom: -10px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      border: 0.5px solid $brass;
+    }
+  }
+}
+
+.quote {
+  padding: 9px 0;
+  height: 100%;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 5px 0;
+  }
+
+  p {
+    height: 100%;
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 0.6em;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 0.2em;
+    }
+
+    &:before {
+      content: "\201C";
+    }
+
+    &:after {
+      content: "\201D";
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 5px;
+  background: black;
+  padding: 0 10px;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.2em;
+    bottom: 0;
+  }
+}
