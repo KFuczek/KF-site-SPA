@@ -1,9 +1,16 @@
+$breakpoint-mobile: 420px;
+
+
 .bubble {
   position: absolute;
   width: clamp(80px, 30vw, 200px);
   transform: translate(0%, -50%);
   top: 0;
   left: 50%;
+
+  @media (max-width: $breakpoint-mobile) {
+    transform: translate(0%, 0%);
+  }
 }
 
 .bubbleText {

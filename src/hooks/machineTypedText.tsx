@@ -3,7 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 export const useMachineTypedText = (
   words: string[],
   keySpeed = 1000,
-  maxPauseAmount = 10
+  maxPauseAmount = 10,
+  startTyping: boolean
 ) => {
   const [currentWord, setCurrentWord] = useState(['']);
   const [fullText, setFullText] = useState(['']);
@@ -38,7 +39,7 @@ export const useMachineTypedText = (
   };
 
   useEffect(() => {
-    if (words.length === 0 || !words[0]) {
+    if (!startTyping || words.length === 0 || !words[0]) {
       return;
     }
 
@@ -51,7 +52,7 @@ export const useMachineTypedText = (
     return () => {
       clearInterval(typingInterval.current);
     };
-  }, [keySpeed, words, maxPauseAmount]);
+  }, [keySpeed, words, maxPauseAmount, startTyping]);
 
   return {
     word: <>{fullText.join('')}</>

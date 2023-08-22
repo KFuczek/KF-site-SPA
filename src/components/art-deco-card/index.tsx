@@ -11,13 +11,15 @@ export default function ArtDecoCard({
   author: string;
 }) {
   const [refAvailable, setRefAvailable] = useState(false);
+  const [startTyping, setStartTyping] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
   const quoteRef = useRef<HTMLDivElement | null>(null);
   const { word: typedAuthor } = useMachineTypedText(
     // toDo: fix
     author.split(' '),
-    100,
-    10
+    350,
+    10,
+    startTyping
   );
 
   const setRef = useCallback((node: HTMLDivElement | null, ref: any) => {
@@ -34,13 +36,31 @@ export default function ArtDecoCard({
       for (const entry of entries) {
         const target: HTMLDivElement = entry.target as HTMLDivElement;
         const { offsetWidth } = target;
-        const fontSize = Math.max(offsetWidth * 0.05, 25);
+        const fontSize = Math.max(offsetWidth * 0.05, 15);
         target.style.fontSize = fontSize + 'px';
       }
     });
 
-    if (quoteRef.current) {
-      resizeObserver.observe(quoteRef.current as HTMLDivElement);
+    if (cardRef.current) {
+      resizeObserver.observe(cardRef.current as HTMLDivElement);
+    }
+  }, [refAvailable]);
+
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            setStartTyping(true);
+          }, 5000);
+        }
+      });
+    });
+
+    if (cardRef.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      intersectionObserver.observe(cardRef.current);
     }
   }, [refAvailable]);
 

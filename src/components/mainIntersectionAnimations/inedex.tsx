@@ -7,7 +7,9 @@ export default function IntersectionAnimations() {
   return (
     <div className={styles.intersectionMainAnimationsContainer}>
       <LeftHeadAnimation />
-      <Envelope />
+      <div className={styles.placeholder}>
+        <Envelope />
+      </div>
     </div>
   );
 }

@@ -17,7 +17,7 @@ $font-family: "Poiret One", cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 
   @media (max-width: $breakpoint-mobile) {
     border: 0.5px solid $brass;
@@ -33,14 +33,14 @@ $font-family: "Poiret One", cursive;
     top: 9px;
     left: 0;
     right: 0;
-    bottom: 9px;
+    bottom: 20px;
 
     @media (max-width: $breakpoint-mobile) {
       margin: 20px;
-      top: -13px;
-      left: -12px;
-      right: -12px;
-      bottom: -10px;
+      top: -11px;
+      left: -14px;
+      right: -14px;
+      bottom: -4px;
     }
 
     @media (max-width: $breakpoint-mobile) {
@@ -51,7 +51,8 @@ $font-family: "Poiret One", cursive;
 
 .quote {
   padding: 9px 0;
-  height: 100%;
+  height: min-content;
+  width: 100%;
 
   @media (max-width: $breakpoint-mobile) {
     padding: 5px 0;
@@ -60,12 +61,7 @@ $font-family: "Poiret One", cursive;
   p {
     height: 100%;
     min-width: 30px;
-    min-height: 30px;
     font-size: 0.6em;
-
-    @media (max-width: $breakpoint-mobile) {
-      font-size: 0.2em;
-    }
 
     &:before {
       content: "\201C";
@@ -79,12 +75,13 @@ $font-family: "Poiret One", cursive;
 
 .footer {
   position: absolute;
-  bottom: 5px;
   background: black;
   padding: 0 10px;
+  font-size: 0.6em;
+  bottom: -5px;
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: 0.2em;
+    font-size: 0.6em;
     bottom: 0;
   }
 }
