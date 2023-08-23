@@ -3,7 +3,8 @@
 $breakpoint-mobile: 420px;
 $black: #000;
 $brass: #b6a644;
-$font-family: "Poiret One", cursive;
+//$font-family: "Poiret One", cursive;
+$font-family: "Apple Chancery", cursive;
 
 .card {
   background: $black;
@@ -11,7 +12,7 @@ $font-family: "Poiret One", cursive;
   font-family: $font-family;
   text-align: center;
   border: 2px solid $brass;
-  margin: 20px 40px;
+  margin: 23px 40px;
   height: fill-available;
   width: fill-available;
   display: flex;
@@ -21,7 +22,7 @@ $font-family: "Poiret One", cursive;
 
   @media (max-width: $breakpoint-mobile) {
     border: 0.5px solid $brass;
-    margin: 5px 10px;
+    margin: 10px 14px;
   }
 
   &:after {
@@ -30,17 +31,17 @@ $font-family: "Poiret One", cursive;
     border: 2px solid $brass;
     display: block;
     position: absolute;
-    top: 9px;
-    left: 0;
-    right: 0;
-    bottom: 20px;
+    top: 15px;
+    left: -2px;
+    right: -2px;
+    bottom: 26px;
 
     @media (max-width: $breakpoint-mobile) {
       margin: 20px;
-      top: -11px;
+      top: -2px;
       left: -14px;
       right: -14px;
-      bottom: -4px;
+      bottom: 4px;
     }
 
     @media (max-width: $breakpoint-mobile) {
@@ -61,7 +62,11 @@ $font-family: "Poiret One", cursive;
   p {
     height: 100%;
     min-width: 30px;
-    font-size: 0.6em;
+    font-size: 0.7em;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1em;
+    }
 
     &:before {
       content: "\201C";
@@ -77,11 +82,11 @@ $font-family: "Poiret One", cursive;
   position: absolute;
   background: black;
   padding: 0 10px;
-  font-size: 0.6em;
+  font-size: 0.8em;
   bottom: -5px;
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: 0.6em;
+    font-size: 0.8em;
     bottom: 0;
   }
 }
