@@ -35,7 +35,7 @@ const outrun = localFont({
 const openSans = localFont({
   src: [
     {
-      path: '../../public/fonts/OpenSAns-Regular.ttf',
+      path: '../../public/fonts/OpenSans-Regular.ttf',
       weight: '400',
       style: 'normal'
     }
