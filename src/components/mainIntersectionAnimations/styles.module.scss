@@ -1,21 +1,39 @@
 $breakpoint-mobile: 420px;
 
+.leftSide {
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-row-start: 2;
+  }
+}
+
+.rightSide {
+  position: relative;
+  width: 100%;
+  display: flex;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-column-start: 1;
+  }
+}
+
+
 .intersectionMainAnimationsContainer {
   width: 100%;
   height: 150vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: minmax(150px, min-content) 1fr;
 
-.placeholder {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-
-  @media (max-width: $breakpoint-mobile) {
-    height: 150px;
-  }
+  background-image: url('/wallpaper-art-deco.jpg');
 }

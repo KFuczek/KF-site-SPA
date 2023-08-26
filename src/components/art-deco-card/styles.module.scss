@@ -1,15 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
-
 $breakpoint-mobile: 420px;
 $black: #000;
 $brass: #b6a644;
-//$font-family: "Poiret One", cursive;
-$font-family: "Apple Chancery", cursive;
 
 .card {
   background: $black;
   color: $brass;
-  font-family: $font-family;
   text-align: center;
   border: 2px solid $brass;
   margin: 23px 40px;
@@ -82,8 +77,8 @@ $font-family: "Apple Chancery", cursive;
   position: absolute;
   background: black;
   padding: 0 10px;
-  font-size: 0.8em;
-  bottom: -5px;
+  font-size: 0.6em;
+  bottom: 0px;
 
   @media (max-width: $breakpoint-mobile) {
     font-size: 0.8em;

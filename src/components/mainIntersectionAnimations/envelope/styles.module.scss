@@ -9,16 +9,37 @@ $heart-color: rgb(252, 8, 231);
 $breakpoint-mobile: 420px;
 
 .envelopeContainer {
-  position: relative;
+  position: absolute;
   height: fit-content;
-
+  right: 5vw;
+  top: 300px;
   width: min-content;
   display: block;
   place-items: center;
-  transform: translate(-10vw, 200px);
+  z-index: 50;
 
   @media (max-width: $breakpoint-mobile) {
-    transform: translate(-10vw, 75px);
+    top: 150px;
+    right: 5vw;
+  }
+}
+
+.envelopeContainerRemove {
+  animation-name: removeEnvelope;
+  animation-fill-mode: forwards;
+  animation-duration: 4s;
+  animation-delay: 6s;
+  @keyframes removeEnvelope {
+    0% {
+      opacity: 1;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
   }
 }
 
@@ -91,6 +112,18 @@ $breakpoint-mobile: 420px;
   border: 2px solid gold;
 }
 
+.letterOnPlace {
+  position: relative;
+  width: 100%;
+  border: 2px solid gold;
+  background-color: black;
+  height: 250px;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 150px;
+  }
+}
+
 .button {
   position: relative;
   width: 15px;
@@ -159,9 +192,9 @@ $breakpoint-mobile: 420px;
     }
     100% {
       z-index: 10;
-      width: 77vw;
+      width: 80vw;
       height: 250px;
-      transform: translate(10vw, -200px);
+      transform: translate(5vw, -300px);
     }
   }
 
@@ -178,7 +211,7 @@ $breakpoint-mobile: 420px;
       z-index: 10;
       width: 100vw;
       height: 150px;
-      transform: translate(10vw, -75px);
+      transform: translate(5vw, -150px);
     }
   }
 }

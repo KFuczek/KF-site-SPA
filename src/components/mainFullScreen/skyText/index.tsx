@@ -1,12 +1,13 @@
 import styles from './styles.module.scss';
+import { outrun, openSans } from '../../../fonts';
 
 export default function Sun() {
   return (
     <div className={styles.textContainer}>
       <div className={styles.textWrapper}>
         <div className={styles.triangle} />
-        <div className={styles.text}>
-          <span className={styles.line1}>
+        <div className={`${styles.text} ${openSans.className}`}>
+          <span className={`${styles.line1} ${openSans.className}`}>
             <span className={styles.letter}>s</span>
             <span className={styles.letter}>c</span>
             <span className={styles.letter}>r</span>
@@ -23,7 +24,7 @@ export default function Sun() {
             <span className={styles.letter}>g</span>
             <span className={styles.letter}>h</span>
           </span>
-          <span className={styles.line3}>
+          <span className={`${styles.line3} ${outrun.className}`}>
             <span className={styles.letter}>f</span>
             <span className={styles.letter}>o</span>
             <span className={styles.letter}>r</span>

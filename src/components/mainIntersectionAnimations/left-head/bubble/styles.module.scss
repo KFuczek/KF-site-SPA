@@ -7,9 +7,10 @@ $breakpoint-mobile: 420px;
   transform: translate(0%, -50%);
   top: 0;
   left: 50%;
+  z-index: 100;
 
   @media (max-width: $breakpoint-mobile) {
-    transform: translate(0%, 0%);
+    transform: translate(0%, -75%);
   }
 }
 
@@ -19,6 +20,5 @@ $breakpoint-mobile: 420px;
   top: 25%;
   transform: translate(-50%, -50%);
   width: max-content;
-  font-family: "Luminari", fantasy;
   font-size: clamp(10px, 3vw, 20px);
 }

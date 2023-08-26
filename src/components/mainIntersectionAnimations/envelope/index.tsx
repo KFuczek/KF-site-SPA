@@ -1,9 +1,11 @@
 'use client';
 import styles from './styles.module.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ArtDecoCard from '../../art-deco-card';
 import { getHTTPGet } from '../../../helpers/url-helpers';
 import useLocalStorage from '../../../hooks/localStorage';
+
+import { createPortal } from 'react-dom';
 
 export default function Envelope() {
   const [refAvailable, setRefAvailable] = useState(false);
@@ -11,6 +13,7 @@ export default function Envelope() {
   const envelopeContainerRef = useRef<HTMLDivElement>();
   const envelopeRef = useRef<HTMLDivElement>();
   const envelopeButtonRef = useRef<HTMLDivElement>();
+  const [cardComponentRendered, setCardComponentRendered] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const [quoteIndex, setQuoteIndex] = useLocalStorage('quoteIndex', 0);
 
@@ -41,6 +44,14 @@ export default function Envelope() {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            console.log('start!!!');
+            setTimeout(() => {
+              setCardComponentRendered(true);
+            }, 6000);
+            envelopeContainerRef.current?.classList.toggle(
+              styles.envelopeContainerRemove,
+              true
+            );
             envelopeRef.current?.classList.toggle(styles.flap, true);
             envelopeButtonRef.current?.classList.toggle(
               styles.buttonOpen,
@@ -59,6 +70,30 @@ export default function Envelope() {
     }
   }, [refAvailable]);
 
+  const letterNotReady = useMemo(() => {
+    return (
+      <div className={styles.letter}>
+        <ArtDecoCard text={quote.text} author={''} />;
+      </div>
+    );
+  }, [quote.text]);
+
+  const getLetter = useCallback(() => {
+    if (cardComponentRendered) {
+      const section2Node = document.getElementById(
+        'section2-right-side'
+      ) as HTMLDivElement;
+      const LetterWrapper = (
+        <div className={styles.letterOnPlace}>
+          <ArtDecoCard text={quote.text} author={quote.author} />
+        </div>
+      );
+      return createPortal(LetterWrapper, section2Node);
+    }
+
+    return null;
+  }, [cardComponentRendered, quote.text]);
+
   return (
     <div
       ref={node => setRef(node, envelopeContainerRef)}
@@ -69,9 +104,8 @@ export default function Envelope() {
           ref={node => setRef(node, envelopeRef)}
           className={styles.envelope}
         >
-          <div className={styles.letter}>
-            {quote && <ArtDecoCard text={quote.text} author={quote.author} />}
-          </div>
+          {getLetter()}
+          {letterNotReady}
           <div
             ref={node => setRef(node, envelopeButtonRef)}
             className={styles.button}

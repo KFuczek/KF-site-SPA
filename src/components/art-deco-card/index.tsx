@@ -1,9 +1,10 @@
 'use client';
 import styles from './styles.module.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, memo } from 'react';
 import { useMachineTypedText } from '../../hooks/machineTypedText';
+import { poiretOne } from '../../fonts';
 
-export default function ArtDecoCard({
+const ArtDecoCard = memo(function ArtDecoCard({
   text,
   author
 }: {
@@ -14,6 +15,7 @@ export default function ArtDecoCard({
   const [startTyping, setStartTyping] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
   const quoteRef = useRef<HTMLDivElement | null>(null);
+
   const { word: typedAuthor } = useMachineTypedText(
     // toDo: fix
     author.split(' '),
@@ -65,11 +67,16 @@ export default function ArtDecoCard({
   }, [refAvailable]);
 
   return (
-    <div ref={node => setRef(node, cardRef)} className={styles.card}>
+    <div
+      ref={node => setRef(node, cardRef)}
+      className={`${styles.card} ${poiretOne.className}`}
+    >
       <div ref={node => setRef(node, quoteRef)} className={styles.quote}>
         <p>{text}</p>
       </div>
       <footer className={styles.footer}>{typedAuthor}</footer>
     </div>
   );
-}
+});
+
+export default ArtDecoCard;
