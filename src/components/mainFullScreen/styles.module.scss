@@ -11,13 +11,13 @@ $breakpoint-mobile: 420px;
   overflow-y: auto;
   background-color: black;
   overflow-x: hidden;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  // -ms-overflow-style: none; /* IE and Edge */
+  // scrollbar-width: none; /* Firefox */
 }
 
-.wrapper::-webkit-scrollbar {
-  display: none;
-}
+//.wrapper::-webkit-scrollbar {
+//  display: none;
+//}
 
 .sunSet {
   height: 80%;

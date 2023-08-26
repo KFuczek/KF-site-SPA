@@ -6,6 +6,7 @@ import Envelope from './envelope';
 export default function IntersectionAnimations() {
   return (
     <div className={styles.intersectionMainAnimationsContainer}>
+      <div className={styles.border} />
       <div className={styles.leftSide}>
         <LeftHeadAnimation />
       </div>
