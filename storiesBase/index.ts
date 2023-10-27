@@ -2,7 +2,8 @@ import { promises as fs } from 'fs';
 
 const TITLES = new Map([
   ['Pierścień doktora Leukmatzena', 'story-1'],
-  ['Zwyczajne życie Pana Arkdiusza I', 'story-2']
+  ['Zwyczajne życie Pana Arkdiusza I', 'story-2'],
+  ['test', 'test']
 ]);
 
 const getStory = async (storyTitle: string) => {
@@ -11,11 +12,16 @@ const getStory = async (storyTitle: string) => {
   }
 
   const fileName = TITLES.get(storyTitle) as string;
-  const file = await fs.readFile(
-    process.cwd() + `/storiesBase/${fileName}.JSON`,
-    'utf8'
-  );
-  return file;
+  try {
+    const file = await fs.readFile(
+      process.cwd() + `/storiesBase/${fileName}.JSON`,
+      'utf8'
+    );
+
+    return file;
+  } catch (error) {
+    return { error };
+  }
 };
 
 const getTitles = (): string[] => {
