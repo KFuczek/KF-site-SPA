@@ -1,6 +1,7 @@
 'use client';
 import styles from './index.module.scss';
 import { ReactElement, useEffect, useState } from 'react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [isSSR, setIsSSR] = useState(true);
@@ -8,7 +9,9 @@ export default function Navbar() {
     setIsSSR(false);
   }, []);
   return isSSR ? null : (
-    <div id={'main-navbar'} className={`${styles.navbar}`} />
+    <div id={'main-navbar'} className={`${styles.navbar}`}>
+      <Link href={'/stories'}>Stories</Link>
+    </div>
   );
 }
 

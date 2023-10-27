@@ -1,5 +1,8 @@
 /* eslint-env node */
 module.exports = {
+    env: {
+        "es6": true
+    },
     root: true,
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
