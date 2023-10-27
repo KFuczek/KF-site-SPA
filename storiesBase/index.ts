@@ -14,7 +14,7 @@ const getStory = async (storyTitle: string) => {
   const fileName = TITLES.get(storyTitle) as string;
   try {
     const file = await fs.readFile(
-      process.cwd() + `/storiesBase/${fileName}.JSON`,
+      process.cwd() + `/storiesBase/${fileName}.json`,
       'utf8'
     );
     console.log('file', file);
