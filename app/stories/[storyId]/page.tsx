@@ -16,6 +16,7 @@ export default function Story() {
 
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     void getHTTPGet(`/api/stories/story?${parameters}`).then((data: string) => {
+      console.log('from server', data);
       const parsed = JSON.parse(data) as Story;
       setData(parsed);
     });
