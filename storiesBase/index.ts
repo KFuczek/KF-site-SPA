@@ -13,12 +13,16 @@ const getStory = async (storyTitle: string) => {
 
   const fileName = TITLES.get(storyTitle) as string;
   try {
-    console.log('path', process.cwd());
-    const file = await fs.readFile(`./storiesBase/${fileName}.JSON`, 'utf8');
+    const path = process.cwd();
+    const file = await fs.readFile(
+      process.cwd() + `/storiesBase/${fileName}.JSON`,
+      'utf8'
+    );
     console.log('file', file);
     return file;
   } catch (error) {
-    return { title: 'error', text: error };
+    const path = process.cwd();
+    return { title: path, text: error };
   }
 };
 
