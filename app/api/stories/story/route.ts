@@ -4,16 +4,11 @@ import { list } from '@vercel/blob';
 //import { promises as fs } from 'fs';
 import { getStory } from '../../../../storiesBase';
 
-interface Story {
-  text: string;
-  title: string;
-}
-
 interface Blob {
   url: string;
   pathname: string;
   size: number;
-  uploadedAt: string;
+  uploadedAt: Date;
 }
 
 interface BlobList {
@@ -33,8 +28,9 @@ export async function GET(request: NextRequest) {
     };
   });
 
-  const story = await getStory(decodedTitle, fileNames);
-  const text = (await story?.text()) as string;
+  const story: any = await getStory(decodedTitle, fileNames);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+  const text = (await story?.text()) as unknown as string;
 
   return NextResponse.json({ text, title });
 }

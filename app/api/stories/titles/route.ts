@@ -6,7 +6,7 @@ interface Blob {
   url: string;
   pathname: string;
   size: number;
-  uploadedAt: string;
+  uploadedAt: Date;
 }
 
 interface BlobList {

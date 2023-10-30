@@ -13,14 +13,14 @@ const TITLES_FILE_NAMES = new Map([
 const getStory = async (storyTitle: string, storyURLS: StoryURL[]) => {
   const requiredFileName = [...TITLES_FILE_NAMES].find(
     ([, value]) => storyTitle === value
-  )[0];
+  )?.[0];
 
   const requiredUrl = storyURLS.find(
     storyUrl => storyUrl.fileName === requiredFileName
   );
 
   try {
-    const file = getHTTPGetBlob(requiredUrl.url);
+    const file = getHTTPGetBlob(requiredUrl?.url || '');
 
     return file;
   } catch (error) {

@@ -13,7 +13,7 @@ export default function Story() {
     const { storyId } = params;
     const parameters = new URLSearchParams({
       title: storyId
-    }) as string;
+    }) as unknown as string;
 
     void getHTTPGet(`/api/stories/story?${parameters}`).then((data: Story) => {
       console.log('from server', data);
