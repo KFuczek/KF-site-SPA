@@ -1,34 +1,39 @@
-import { promises as fs } from 'fs';
+import { getHTTPGetBlob } from '../src/helpers/url-helpers';
 
-const TITLES = new Map([
-  ['Pierścień doktora Leukmatzena', 'story-1'],
-  ['Zwyczajne życie Pana Arkdiusza I', 'story-2'],
-  ['test', 'test']
+interface StoryURL {
+  url: string;
+  fileName: string;
+}
+
+const TITLES_FILE_NAMES = new Map([
+  ['story-1', 'Pierścień doktora Leukmatzena'],
+  ['story-2', 'Zwyczajne życie Pana Arkdiusza I']
 ]);
 
-const getStory = async (storyTitle: string) => {
-  if (!TITLES.has(storyTitle)) {
-    return null;
-  }
+const getStory = async (storyTitle: string, storyURLS: StoryURL[]) => {
+  const requiredFileName = [...TITLES_FILE_NAMES].find(
+    ([, value]) => storyTitle === value
+  )[0];
 
-  const fileName = TITLES.get(storyTitle) as string;
+  const requiredUrl = storyURLS.find(
+    storyUrl => storyUrl.fileName === requiredFileName
+  );
+
   try {
-    const file = await fs.readFile(
-      process.cwd() + `/storiesBase/${fileName}.json`,
-      'utf8'
-    );
-    console.log('file', file);
+    const file = getHTTPGetBlob(requiredUrl.url);
+
     return file;
   } catch (error) {
-    const path = process.cwd();
-    return { title: path, text: error };
+    return { text: error };
   }
 };
 
-const getTitles = (): string[] => {
-  const keys = [...TITLES.keys()] as string[];
+const getTitles = (fileNames: string[]): string[] => {
+  const titles = fileNames.map(
+    fileName => TITLES_FILE_NAMES.get(fileName) || ''
+  );
 
-  return keys;
+  return titles;
 };
 
 export { getStory, getTitles };

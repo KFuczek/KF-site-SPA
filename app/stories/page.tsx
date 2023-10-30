@@ -8,6 +8,7 @@ export default function StoriesList() {
 
   useEffect(() => {
     void getHTTPGet('/api/stories/titles').then((data: never[]) => {
+      console.log('stories', data);
       setData(data);
     });
   }, []);

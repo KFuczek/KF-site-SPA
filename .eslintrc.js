@@ -24,6 +24,7 @@ module.exports = {
                 'next/core-web-vitals',
                 'prettier',
             ],
+            rules: {'@typescript-eslint/unbound-method': 'off'}
         },
     ],
     ignorePatterns: [

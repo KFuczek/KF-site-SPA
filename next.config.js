@@ -2,7 +2,6 @@
 const path = require('path');
 
 const nextConfig = {
-    experimental: {nftTracing: true},
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },

@@ -1,0 +1,39 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #164B45;
+  color: #B9A46B;
+
+  border: 2px solid #72634C;
+  outline: 2px solid #72634C;
+  outline-offset: -12px;
+
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background-color: #2A2829;
+  border: 1px solid #BDB390;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.circles {
+  position: relative;
+  margin-top: 5px;
+
+  &.left {
+    left: 2em;
+  }
+
+  &.right {
+    right: 2em;
+  }
+}

@@ -6,26 +6,26 @@ import { Story } from '../../../src/types/story';
 
 export default function Story() {
   const params = useParams();
-  const [data, setData] = useState({ title: '', text: '' });
+  const [text, setText] = useState('');
+  const [title, setTitle] = useState('');
 
   useEffect(() => {
     const { storyId } = params;
     const parameters = new URLSearchParams({
       title: storyId
-    });
+    }) as string;
 
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    void getHTTPGet(`/api/stories/story?${parameters}`).then((data: string) => {
+    void getHTTPGet(`/api/stories/story?${parameters}`).then((data: Story) => {
       console.log('from server', data);
-      const parsed = JSON.parse(data) as Story;
-      setData(parsed);
+      setTitle(data.title);
+      setText(data.text);
     });
   }, []);
 
   return (
     <div>
-      <div>{data.title} </div>
-      <div> {data.text}</div>
+      <div>{decodeURI(title)} </div>
+      <div style={{ whiteSpace: 'pre-line' }}> {text}</div>
     </div>
   );
 }
