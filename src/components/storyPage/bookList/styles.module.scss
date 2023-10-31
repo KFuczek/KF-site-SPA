@@ -1,0 +1,17 @@
+.container {
+  background-color: black;
+  min-height: 100vh;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+}
+
+.crotch {
+  a {
+    color: white;
+  }
+}
