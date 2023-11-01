@@ -1,0 +1,86 @@
+.buttonContainer {
+  background-color: transparent;
+  border: unset;
+  width: 250px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.button {
+  display: grid;
+  box-sizing: border-box;
+  grid-template-columns:
+    [outer-start]  5px
+    [mid-start]    5px
+    [inner-start]  2px
+    [gap-start]    1fr
+    [gap-end]      2px
+    [inner-end]    5px
+    [mid-end]      5px
+    [outer-end];
+  grid-template-rows:
+    [outer-start]  5px
+    [mid-start]    5px
+    [inner-start]  2px
+    [gap-start]    1fr
+    [gap-end]      2px
+    [inner-end]    5px
+    [mid-end]      5px
+    [outer-end];
+}
+
+.buttonContent {
+  grid-area: inner;
+  color: rgb(185, 164, 107);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "__limeLight_42fa27", serif;
+  font-size: 2.2em;
+
+}
+
+.inner {
+  grid-area: mid;
+  border: 1px solid plum;
+}
+
+.leftTop {
+  grid-column: outer-start / inner-start;
+  grid-row: outer-start / inner-start;
+  border: 1px solid lightcoral;
+}
+
+.leftBottom {
+  grid-column: outer-start / inner-start;
+  grid-row: inner-end / outer-end;
+  border: 1px solid lightcoral;
+}
+
+.rightTop {
+  grid-column: inner-end / outer-end;
+  grid-row: outer-start / inner-start;
+  border: 1px solid lightcoral;
+}
+
+.rightBottom {
+  grid-column: inner-end / outer-end;
+  grid-row: inner-end / outer-end;
+  border: 1px solid lightcoral;
+}
+
+.tall {
+  grid-column: gap-start / gap-end;
+  grid-row: outer-start / outer-end;
+  border-top: 1px solid aquamarine;
+  border-bottom: 1px solid aquamarine;
+}
+
+.wide {
+  grid-column: outer-start / outer-end;
+  grid-row: gap-start / gap-end;
+  border-left: 1px solid khaki;
+  border-right: 1px solid khaki;
+}

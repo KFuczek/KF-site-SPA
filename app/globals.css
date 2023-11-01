@@ -25,5 +25,5 @@
 .children-root {
     scroll-snap-type: y proximity;
     height: 100vh;
-    overflow: scroll;
+    overflow: hidden;
 }

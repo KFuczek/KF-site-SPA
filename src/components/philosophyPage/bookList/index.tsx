@@ -2,19 +2,18 @@
 import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
+import { getHTTPGetWithCache } from '../../../helpers/url-helpers';
 
 export default function BookList() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    void getHTTPGetWithLocalStorage(
-      'storyList',
-      '/api/stories/titles',
-      3600 * 24
-    ).then((data: never) => {
-      setData(data);
-    });
+    void getHTTPGetWithCache('/api/stories/titles', 3600 * 24).then(
+      (data: never[]) => {
+        console.log('stories', data);
+        setData(data);
+      }
+    );
   }, []);
 
   const createStoriesList = (stories: string[]) => {

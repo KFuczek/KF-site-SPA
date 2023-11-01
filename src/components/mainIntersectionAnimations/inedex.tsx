@@ -7,7 +7,7 @@ import TopBorder from './top-border';
 export default function IntersectionAnimations() {
   return (
     <div className={styles.intersectionMainAnimationsContainer}>
-      <div className={styles.border}>
+      <div id="borderMenu" className={styles.borderMenu}>
         <TopBorder />
       </div>
       <div className={styles.leftSide}>

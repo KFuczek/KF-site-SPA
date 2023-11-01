@@ -11,17 +11,18 @@ export default function Navbar() {
   }, []);
   return isSSR ? null : (
     <div id={'main-navbar'} className={`${styles.navbar}`}>
-      <Link href={'/stories'}>Stories</Link>
+      <Link href={'/politics'}>politics</Link>
+      <Link href={'/philosophy'}>philosophy</Link>
       <NeonButton url={'stories'} />
     </div>
   );
 }
 
-export const toggleNavbar = (show: boolean) => {
+export const toggleNavbar = (hide: boolean) => {
   const navbar: ReactElement | HTMLElement | null =
     document.getElementById('main-navbar');
   if (!navbar) {
     return;
   }
-  navbar.classList.toggle(styles.show, show);
+  navbar.classList.toggle(styles.hide, hide);
 };

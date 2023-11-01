@@ -2,7 +2,7 @@
 import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
+import { getHTTPGetWithCache } from '../../../helpers/url-helpers';
 import { Story } from '../../../types/story';
 
 export default function BookView() {
@@ -16,14 +16,13 @@ export default function BookView() {
       title: storyId
     }) as unknown as string;
 
-    void getHTTPGetWithLocalStorage(
-      storyId,
+    void getHTTPGetWithCache(
       `/api/stories/story?${parameters}`,
       3600 * 24
-    ).then((data: never) => {
-      const story = data as Story;
-      setTitle(story.title);
-      setText(story.text);
+    ).then((data: Story) => {
+      console.log('from server', data);
+      setTitle(data.title);
+      setText(data.text);
     });
   }, []);
 

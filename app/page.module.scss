@@ -4,6 +4,11 @@
   height: 100vh;
 }
 
+.sectionContainer {
+  height: fill-available;
+  overflow: scroll;
+}
+
 .container {
   width: 100vw;
   height: 100vh;

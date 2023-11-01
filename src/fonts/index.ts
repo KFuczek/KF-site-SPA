@@ -8,6 +8,10 @@ const luminari = localFont({
   src: '../../public/fonts/Luminari-Regular.ttf'
 });
 
+const limeLight = localFont({
+  src: '../../public/fonts/Limelight-Regular.ttf'
+});
+
 const streamster = localFont({
   src: '../../public/fonts/Streamster.ttf'
 });
@@ -42,4 +46,4 @@ const openSans = localFont({
   ]
 });
 
-export { poiretOne, luminari, streamster, outrun, openSans };
+export { poiretOne, luminari, streamster, outrun, openSans, limeLight };
