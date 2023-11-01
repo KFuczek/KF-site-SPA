@@ -49,7 +49,9 @@ export const getHTTPGetWithLocalStorage = async (
   key: string,
   url: string,
   revalidate = 3600
-): Promise<string> => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore:next-line
+): Promise<any> => {
   const data = getFromLocalStorageWithExpireTime(key, revalidate);
   if (data) {
     console.log('from storage');

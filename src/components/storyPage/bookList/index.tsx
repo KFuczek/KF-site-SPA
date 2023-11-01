@@ -5,14 +5,14 @@ import Link from 'next/link';
 import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
 
 export default function BookList() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(['']);
 
   useEffect(() => {
     void getHTTPGetWithLocalStorage(
       'storyList',
       '/api/stories/titles',
       3600 * 24
-    ).then((data: never) => {
+    ).then((data: string[]) => {
       setData(data);
     });
   }, []);

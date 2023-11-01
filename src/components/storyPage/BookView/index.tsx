@@ -20,7 +20,7 @@ export default function BookView() {
       storyId,
       `/api/stories/story?${parameters}`,
       3600 * 24
-    ).then((data: never) => {
+    ).then((data: any) => {
       const story = data as Story;
       setTitle(story.title);
       setText(story.text);
