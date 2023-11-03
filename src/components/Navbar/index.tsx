@@ -11,8 +11,8 @@ export default function Navbar() {
   }, []);
   return isSSR ? null : (
     <div id={'main-navbar'} className={`${styles.navbar}`}>
-      <Link href={'/politics'}>politics</Link>
-      <Link href={'/philosophy'}>philosophy</Link>
+      <Link href={'/politics'}>Droga</Link>
+      <Link href={'/philosophy'}>Filozofia</Link>
       <NeonButton url={'stories'} />
     </div>
   );
