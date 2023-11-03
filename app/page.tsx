@@ -19,7 +19,7 @@ export default function Home() {
       const navBar = document.getElementById('borderMenu');
       navBarRef.current = navBar?.children[0] as HTMLElement;
       navBarRefContainer.current = navBar;
-    }, 100);
+    }, 500);
 
     return () => {
       toggleNavbar(false);

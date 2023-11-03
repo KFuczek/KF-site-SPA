@@ -150,5 +150,9 @@ export default [
   {
     text: 'Bycie dobrym człowiekiem jest wygraną samom w sobie.',
     author: '?'
+  },
+  {
+    text: 'Fool me once, shame on you; fool me twice, shame on me',
+    author: '?'
   }
 ];
