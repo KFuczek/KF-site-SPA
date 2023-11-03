@@ -2,7 +2,7 @@
 import styles from './index.module.scss';
 import { ReactElement, useEffect, useState } from 'react';
 import Link from 'next/link';
-import NeonButton from '../buttons/neon';
+import NeonButton from '../../customComponents/buttons/neon';
 
 export default function Navbar() {
   const [isSSR, setIsSSR] = useState(true);

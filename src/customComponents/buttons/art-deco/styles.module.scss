@@ -1,9 +1,16 @@
+$breakpoint-mobile: 420px;
+
 .buttonContainer {
   background-color: transparent;
   border: unset;
   width: 250px;
   height: 100%;
   cursor: pointer;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100px;
+  }
+
 }
 
 .button {
@@ -27,6 +34,37 @@
     [inner-end]    5px
     [mid-end]      5px
     [outer-end];
+
+  &:focus,
+  &:hover {
+    background: transparent;
+    box-shadow: 0 0 5px RGB(204, 255, 21), inset 0 0 15px RGB(204, 255, 21);
+    filter: drop-shadow(30px 30px 30px #7401ef);
+  }
+
+  &:focus,
+  &:hover .leftTop {
+    box-shadow: 0 0 5px lightcoral, inset 0 0 5px lightcoral;
+    filter: drop-shadow(30px 30px 30px lightcoral);
+  }
+
+  &:focus,
+  &:hover .leftBottom {
+    box-shadow: 0 0 5px lightcoral, inset 0 0 5px lightcoral;
+    filter: drop-shadow(30px 30px 30px lightcoral);
+  }
+
+  &:focus,
+  &:hover .rightTop {
+    box-shadow: 0 0 5px lightcoral, inset 0 0 5px lightcoral;
+    filter: drop-shadow(30px 30px 30px lightcoral);
+  }
+
+  &:focus,
+  &:hover .rightBottom {
+    box-shadow: 0 0 5px lightcoral, inset 0 0 5px lightcoral;
+    filter: drop-shadow(30px 30px 30px lightcoral);
+  }
 }
 
 .buttonContent {
@@ -40,11 +78,21 @@
   font-family: "__limeLight_42fa27", serif;
   font-size: 2.2em;
 
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.8em;
+  }
 }
 
 .inner {
   grid-area: mid;
   border: 1px solid plum;
+
+  &:focus,
+  &:hover {
+    background: transparent;
+    box-shadow: 0px 0px 15px plum, inset 0 0 15px plum
+
+  }
 }
 
 .leftTop {

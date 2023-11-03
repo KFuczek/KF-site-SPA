@@ -1,5 +1,7 @@
+$breakpoint-mobile: 420px;
+
 .container {
-  height: 100%;
+  height: inherit;
   width: 100%;
   background-color: #164B45;
   color: #B9A46B;
@@ -31,10 +33,16 @@
 
   &.left {
     left: 2em;
+    @media (max-width: $breakpoint-mobile) {
+      left: 0.5em;
+    }
   }
 
   &.right {
     right: 2em;
+    @media (max-width: $breakpoint-mobile) {
+      right: 0.5em;
+    }
   }
 }
 

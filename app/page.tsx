@@ -35,11 +35,9 @@ export default function Home() {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (target?.scrollTop >= navBarRefContainer.current?.offsetTop) {
       navBarRef.current.style.position = 'fixed';
-      navBarRef.current.style.height = '100px';
       navBarRef.current.style.top = '0';
     } else {
       navBarRef.current.style.position = 'static';
-      navBarRef.current.style.height = '100px';
       navBarRef.current.style.top = 'auto';
     }
   };

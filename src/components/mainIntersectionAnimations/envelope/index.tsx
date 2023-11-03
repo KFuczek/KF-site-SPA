@@ -44,7 +44,6 @@ export default function Envelope() {
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            console.log('start!!!');
             setTimeout(() => {
               setCardComponentRendered(true);
             }, 6000);

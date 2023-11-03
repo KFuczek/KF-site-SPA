@@ -36,8 +36,11 @@ $breakpoint-mobile: 420px;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 4;
-}
 
+  @media (max-width: $breakpoint-mobile) {
+    height: 80px;
+  }
+}
 
 .intersectionMainAnimationsContainer {
   width: 100%;
@@ -47,4 +50,8 @@ $breakpoint-mobile: 420px;
   grid-template-rows: 100px minmax(150px, min-content) 1fr;
 
   background-image: url('/wallpaper-art-deco.jpg');
+
+  @media (max-width: $breakpoint-mobile) {
+    grid-template-rows: 80px minmax(150px, min-content) 1fr;
+  }
 }
