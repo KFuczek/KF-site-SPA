@@ -2,23 +2,28 @@
 import './globals.css';
 import styles from './page.module.scss';
 import MainFullScreen from '../src/components/mainFullScreen';
-import MainIntersectionAnimations from '../src/components/mainIntersectionAnimations/inedex';
+import MainMiddleScreen from '../src/components/mainMiddleScreen';
+import MainEndScreen from '../src/components/mainEndScreen';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { toggleNavbar } from '../src/components/Navbar';
+import {
+  hideMenuBorder,
+  stickyMenuBorder
+} from '../src/components/mainMiddleScreen/top-border';
 
 export default function Home() {
   const [isSSR, setIsSSR] = useState(true);
   const [refAvailable, setRefAvailable] = useState(false);
   const mainFullscreenRef = useRef<HTMLElement | null>(null);
-  const navBarRef = useRef<HTMLElement | null>(null);
+  const middleScreenRef = useRef<HTMLElement | null>(null);
+  const endScreenRef = useRef<HTMLElement | null>(null);
   const navBarRefContainer = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     setIsSSR(false);
     toggleNavbar(true);
     setTimeout(() => {
-      const navBar = document.getElementById('borderMenu');
-      navBarRef.current = navBar?.children[0] as HTMLElement;
-      navBarRefContainer.current = navBar;
+      navBarRefContainer.current = document.getElementById('borderMenu');
     }, 500);
 
     return () => {
@@ -27,32 +32,51 @@ export default function Home() {
   }, []);
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore:next-line
-  const makeMenuSticky = ({ target }: any) => {
-    if (!navBarRef.current || !navBarRefContainer.current) {
+  const makeMenuSticky = (event: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const target = event.target as HTMLElement;
+    if (!navBarRefContainer.current) {
       return;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (target?.scrollTop >= navBarRefContainer.current?.offsetTop) {
-      navBarRef.current.style.position = 'fixed';
-      navBarRef.current.style.top = '0';
-    } else {
-      navBarRef.current.style.position = 'static';
-      navBarRef.current.style.top = 'auto';
-    }
+    const isScreenLowerThanBorderMenu =
+      target?.scrollTop >= navBarRefContainer.current?.offsetTop;
+    stickyMenuBorder(isScreenLowerThanBorderMenu);
   };
-  const setRef = useCallback((node: HTMLElement) => {
-    if (!mainFullscreenRef.current && node) {
-      mainFullscreenRef.current = node;
-      setRefAvailable(true);
+  const setRef = useCallback((node: HTMLDivElement, part: string) => {
+    switch (part) {
+      case 'main': {
+        if (!mainFullscreenRef.current && node) {
+          mainFullscreenRef.current = node;
+        }
+        break;
+      }
+      case 'middle': {
+        if (!middleScreenRef.current && node) {
+          middleScreenRef.current = node;
+        }
+        break;
+      }
+      case 'end': {
+        if (!endScreenRef.current && node) {
+          endScreenRef.current = node;
+        }
+        break;
+      }
     }
+    setRefAvailable(true);
   }, []);
 
   useEffect(() => {
+    intersectionMainFullscreen();
+    intersectionMiddleScreen();
+  }, [refAvailable]);
+
+  const intersectionMainFullscreen = () => {
     const intersectionObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          // toggleNavbar(!entry.isIntersecting);
+          // (!entry.isIntersecting);
         });
       },
       {
@@ -65,7 +89,27 @@ export default function Home() {
       // @ts-ignore
       intersectionObserver.observe(mainFullscreenRef.current);
     }
-  }, [refAvailable]);
+  };
+
+  const intersectionMiddleScreen = () => {
+    const intersectionObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          console.log(entry, entry.isIntersecting);
+          hideMenuBorder(!entry.isIntersecting);
+        });
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    if (middleScreenRef.current) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      intersectionObserver.observe(middleScreenRef.current);
+    }
+  };
 
   return isSSR ? null : (
     <div
@@ -73,13 +117,15 @@ export default function Home() {
       onScroll={target => makeMenuSticky(target)}
     >
       <section className={styles.section1}>
-        <MainFullScreen ref={setRef} />
+        <MainFullScreen ref={(node: HTMLDivElement) => setRef(node, 'main')} />
       </section>
       <section className={styles.section2}>
-        <MainIntersectionAnimations />
+        <MainMiddleScreen
+          ref={(node: HTMLDivElement) => setRef(node, 'middle')}
+        />
       </section>
       <section className={styles.section3}>
-        <div className={styles.container}>container</div>
+        <MainEndScreen ref={(node: HTMLDivElement) => setRef(node, 'end')} />
       </section>
     </div>
   );

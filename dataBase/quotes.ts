@@ -1,7 +1,7 @@
 export default [
   {
     text: 'Ludzie nie dlatego przestają się bawić, że się starzeją, lecz starzeją się, bo przestają się bawić',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'To nie strach lecz wstyd powstrzymuje ludzi przed działaniem.',
@@ -10,7 +10,7 @@ export default [
   { text: 'Bycie dobrym to panowanie nad siła, a nie brak siły.', author: '' },
   {
     text: 'Dwa najważniejsze dni w życiu człowieka to ten, w którym się rodzi i ten, w którym odkrywa - po co.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Pierwszy cios by przestał kolejne siedem by zapamiętał.',
@@ -18,11 +18,11 @@ export default [
   },
   {
     text: 'Kłamstwo obiegnie dookoła połowę świata zanim prawda zdąży włożyć buty.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Ilekroć znajdziesz się po stronie większości zastanów się przez chwilę.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Człowiek mówiący pradę dzień przed innymi przez dobę jest uważny za debila.',
@@ -34,27 +34,27 @@ export default [
   },
   {
     text: 'Bądź ostrożny czytając książki o zdrowiu. Możesz umrzeć na błąd w druku.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Człowiek, który nie czyta, nie ma żadnej przewagi nad tym, który nie umie czytać.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Niczyje zdrowie, wolność ani mienie nie są bezpieczne, kiedy obraduje parlament',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Jeżeli chcemy obudzić w mężczyźnie lub chłopaku pragnienie jakiejś rzeczy, powinniśmy ją przedstawić jako trudną do zdobycia.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Na jednym dobrym słowie mogę przeżyć trzy miesiące.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text: 'Hałas nie dowodzi niczego. Kura, która zniosła jajko, gdacze nieraz tak głośno, jak gdyby zniosła planetę.',
-    author: 'Marc Twain'
+    author: 'Mark Twain'
   },
   {
     text:

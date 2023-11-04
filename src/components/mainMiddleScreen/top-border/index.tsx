@@ -1,10 +1,29 @@
 'use client';
 import styles from './styles.module.scss';
 import Button from '../../../customComponents/buttons/art-deco';
+import { ReactElement } from 'react';
+
+export const hideMenuBorder = (hide: boolean) => {
+  const borderMenu: ReactElement | HTMLElement | null =
+    document.getElementById('border-menu');
+  if (!borderMenu) {
+    return;
+  }
+  borderMenu.classList.toggle(styles.hide, hide);
+};
+
+export const stickyMenuBorder = (sticky: boolean) => {
+  const borderMenu: ReactElement | HTMLElement | null =
+    document.getElementById('border-menu');
+  if (!borderMenu) {
+    return;
+  }
+  borderMenu.classList.toggle(styles.sticky, sticky);
+};
 
 export default function TopBorder() {
   return (
-    <div className={styles.container}>
+    <div id="border-menu" className={styles.container}>
       <div className={`${styles.circles} ${styles.left}`}>
         <div className={styles.circle} />
         <div className={styles.circle} />

@@ -1,5 +1,5 @@
 'use client';
-import { forwardRef } from 'react';
+import { ForwardedRef, forwardRef } from 'react';
 import styles from './styles.module.scss';
 import Sun from './sun/page';
 import Grid from './grid';
@@ -10,9 +10,8 @@ import Town from './town/page';
 import Mountains from './mountains';
 import SkyText from './skyText';
 
-const mainFullScreen = forwardRef((props: any, ref: any) => (
-  <>
-    {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
+const mainFullScreen = forwardRef(
+  (props: any, ref: ForwardedRef<HTMLDivElement>) => (
     <div ref={ref} className={styles.wrapper}>
       <div className={styles.sunSet}>
         <div className={styles.backgroundSky} />
@@ -40,8 +39,8 @@ const mainFullScreen = forwardRef((props: any, ref: any) => (
         </div>
       </div>
     </div>
-  </>
-));
+  )
+);
 
 mainFullScreen.displayName = 'Main_Full_Screen';
 

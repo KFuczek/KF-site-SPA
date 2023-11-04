@@ -1,11 +1,12 @@
 $breakpoint-mobile: 420px;
 
 .container {
+  position: static;
   height: inherit;
   width: 100%;
   background-color: #164B45;
   color: #B9A46B;
-
+  top: auto;
   border: 2px solid #72634C;
   outline: 2px solid #72634C;
   outline-offset: -12px;
@@ -15,6 +16,17 @@ $breakpoint-mobile: 420px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  transition: all 2s ease;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.hide {
+  transform: translateX(100vw);
 }
 
 

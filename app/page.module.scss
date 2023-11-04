@@ -9,12 +9,6 @@
   overflow: scroll;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-  background-color: green;
-}
-
 .section1 {
   scroll-snap-align: start;
   scroll-snap-stop: always;
