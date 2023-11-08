@@ -3,10 +3,13 @@ $breakpoint-mobile: 420px;
 .container {
   height: 100vh;
   width: 100vw;
-  min-height: 900px;
   background-color: seagreen;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+
   @media (max-width: $breakpoint-mobile) {
-    grid-template-rows: 80px minmax(150px, min-content) 1fr;
+
   }
 }
 

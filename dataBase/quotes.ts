@@ -154,5 +154,13 @@ export default [
   {
     text: 'Fool me once, shame on you; fool me twice, shame on me',
     author: '?'
+  },
+  {
+    text: 'Fuck around and find out',
+    author: '?'
+  },
+  {
+    text: 'Nie po to konał na krzyżu, żebyś ty teraz był przegrywem',
+    author: '?'
   }
 ];
