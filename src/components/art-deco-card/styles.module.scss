@@ -7,7 +7,7 @@ $brass: #b6a644;
   color: $brass;
   text-align: center;
   height: 100%;
-  outline: red solid 1px;
+  outline: $brass solid 1px;
   outline-offset: -25px;
   width: fill-available;
   display: flex;
@@ -18,7 +18,7 @@ $brass: #b6a644;
   @media (max-width: $breakpoint-mobile) {
     margin: 0 6px;
 
-    outline: red solid 1px;
+    outline: $brass solid 1px;
     outline-offset: -11px;
   }
 
