@@ -16,6 +16,10 @@ const streamster = localFont({
   src: '../../public/fonts/Streamster.ttf'
 });
 
+const neon = localFont({
+  src: '../../public/fonts/Neon.ttf'
+});
+
 const outrun = localFont({
   src: [
     {
@@ -46,4 +50,4 @@ const openSans = localFont({
   ]
 });
 
-export { poiretOne, luminari, streamster, outrun, openSans, limeLight };
+export { poiretOne, luminari, streamster, outrun, openSans, limeLight, neon };

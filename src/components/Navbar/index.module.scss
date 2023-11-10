@@ -17,5 +17,6 @@
 .hide {
   height: 0px;
   opacity: 0;
+  display: none;
   transition: opacity 2s, height 2s ease;
 }

@@ -6,9 +6,9 @@ $brass: #b6a644;
   background: $black;
   color: $brass;
   text-align: center;
-  border: 2px solid $brass;
-  margin: 23px 40px;
-  height: fill-available;
+  height: 100%;
+  outline: red solid 1px;
+  outline-offset: -25px;
   width: fill-available;
   display: flex;
   flex-direction: column;
@@ -16,27 +16,27 @@ $brass: #b6a644;
   justify-content: center;
 
   @media (max-width: $breakpoint-mobile) {
-    border: 0.5px solid $brass;
-    margin: 10px 14px;
+    margin: 0 6px;
+
+    outline: red solid 1px;
+    outline-offset: -11px;
   }
 
   &:after {
     content: "";
-    margin: 20px 30px;
     border: 2px solid $brass;
     display: block;
     position: absolute;
-    top: 15px;
-    left: -2px;
-    right: -2px;
-    bottom: 26px;
+    top: 36px;
+    left: 12px;
+    right: 12px;
+    bottom: 50px;
 
     @media (max-width: $breakpoint-mobile) {
-      margin: 20px;
-      top: -2px;
-      left: -14px;
-      right: -14px;
-      bottom: 4px;
+      top: 20px;
+      left: 8px;
+      right: 8px;
+      bottom: 20px;
     }
 
     @media (max-width: $breakpoint-mobile) {
@@ -46,12 +46,15 @@ $brass: #b6a644;
 }
 
 .quote {
-  padding: 9px 0;
+  padding: 50px 30px;
   height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
 
   @media (max-width: $breakpoint-mobile) {
-    padding: 5px 0;
+    padding: 25px 14px;
   }
 
   p {

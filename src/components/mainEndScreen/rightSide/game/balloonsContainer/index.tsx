@@ -1,9 +1,9 @@
 'use client';
 import styles from './styles.module.scss';
-import { useEffect } from 'react';
-import { getHSLColorObject } from '../../../../helpers/color-helpers';
+import React, { useEffect } from 'react';
+import { getHSLColorObject } from '../../../../../helpers/color-helpers';
 
-let BALLOONS_NUMBER = 20;
+let BALLOONS_NUMBER = 10;
 
 const createNewBalloon = (index: number, maxYCord: number) => {
   const getRandomXCord = Math.floor(5 + Math.random() * 100);
@@ -72,7 +72,11 @@ const createBalloons = () => {
     });
 };
 
-const BalloonsContainer = () => {
+const BalloonsContainer = ({
+  scoreContainerRef
+}: {
+  scoreContainerRef: any;
+}) => {
   useEffect(() => {
     createBalloons();
   }, []);
@@ -89,6 +93,13 @@ const BalloonsContainer = () => {
     if (!balloonsContainer) {
       return;
     }
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const currentScore = Number(scoreContainerRef.current.dataset.score || 0);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    scoreContainerRef.current.dataset.score = currentScore + 1;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    scoreContainerRef.current.textContent = `Your score: ${currentScore + 1}`;
 
     const balloon = balloonNode.firstChild as HTMLElement;
 

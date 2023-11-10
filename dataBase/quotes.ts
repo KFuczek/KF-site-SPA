@@ -128,7 +128,7 @@ export default [
     author: 'Terry Pratchet'
   },
   {
-    text: 'Starajem się żyć tak by w godzinie śmierć bardziej się cieszyć niż lękać.',
+    text: 'Starałem się żyć tak by w godzinie śmierć bardziej się cieszyć niż lękać.',
     author: 'Witold Pilecki'
   },
   {

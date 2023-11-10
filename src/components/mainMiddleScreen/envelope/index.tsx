@@ -72,7 +72,7 @@ export default function Envelope() {
   const letterNotReady = useMemo(() => {
     return (
       <div className={styles.letter}>
-        <ArtDecoCard text={quote.text} author={''} />;
+        <ArtDecoCard text={quote.text} author={''} />
       </div>
     );
   }, [quote.text]);

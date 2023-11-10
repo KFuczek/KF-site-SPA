@@ -1,5 +1,6 @@
 'use client';
 import styles from './styles.module.scss';
+import { neon } from '../../../fonts';
 import { useRouter } from 'next/navigation';
 
 export default function NeonButton({
@@ -10,11 +11,6 @@ export default function NeonButton({
   name: string;
 }) {
   const { push } = useRouter();
-
-  const start = name.slice(0, 2);
-  const middle = name.slice(2, 3);
-  const end = name.slice(3);
-
   return (
     <button
       className={styles.container}
@@ -22,13 +18,7 @@ export default function NeonButton({
         push(url);
       }}
     >
-      <div className={styles.neonSign}>
-        <span className={styles.glowingText}>
-          {start}
-          <span className={styles.faultyLetter}>{middle}</span>
-          {end}
-        </span>
-      </div>
+      <div className={`${styles.flux} ${neon.className}`}>{name}</div>
     </button>
   );
 }

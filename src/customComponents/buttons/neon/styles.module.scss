@@ -1,5 +1,5 @@
 .container {
-  width: 130px;
+  width: fit-content;
   background: top;
   border: unset;
   height: 100%;
@@ -7,6 +7,7 @@
 
 .neonSign {
   position: relative;
+  padding: 0 5px;
   height: 90%;
   color: rgba(23, 195, 178, 0.6);
   display: flex;

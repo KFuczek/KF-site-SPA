@@ -27,8 +27,8 @@ $breakpoint-mobile: 420px;
 .envelopeContainerRemove {
   animation-name: removeEnvelope;
   animation-fill-mode: forwards;
-  animation-duration: 4s;
-  animation-delay: 5s;
+  animation-duration: 2s;
+  animation-delay: 7s;
   @keyframes removeEnvelope {
     0% {
       opacity: 1;
@@ -117,10 +117,10 @@ $breakpoint-mobile: 420px;
   width: 100%;
   border: 2px solid gold;
   background-color: black;
-  height: 250px;
+  min-height: 250px;
 
   @media (max-width: $breakpoint-mobile) {
-    height: 150px;
+    min-height: 150px;
   }
 }
 

@@ -4,8 +4,9 @@ import BalloonsContainer, { updateBalloons } from '../game/balloonsContainer';
 import { useEffect, useRef } from 'react';
 
 const Game = () => {
-  const balloonsContainer = useRef();
-  const requestRef = useRef(Function);
+  const balloonsContainer = useRef<HTMLElement | null>(null);
+  const scoreRef = useRef<HTMLElement | null>(null);
+  const requestRef = useRef<never>(null);
   const previousTimeRef = useRef(1);
 
   useEffect(() => {
@@ -17,6 +18,9 @@ const Game = () => {
     balloonsContainer.current = document.getElementById(
       'balloons-container'
     ) as HTMLElement;
+
+    scoreRef.current = document.getElementById('frame-text') as HTMLElement;
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore:next-line
     return () => cancelAnimationFrame(requestRef.current);
@@ -46,7 +50,7 @@ const Game = () => {
 
   return (
     <div className={styles.container}>
-      <BalloonsContainer />
+      <BalloonsContainer scoreContainerRef={scoreRef} />
     </div>
   );
 };
