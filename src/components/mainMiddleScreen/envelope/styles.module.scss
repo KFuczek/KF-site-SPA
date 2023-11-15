@@ -118,6 +118,7 @@ $breakpoint-mobile: 420px;
   border: 2px solid gold;
   background-color: black;
   min-height: 250px;
+  height: 100%;
 
   @media (max-width: $breakpoint-mobile) {
     min-height: 150px;

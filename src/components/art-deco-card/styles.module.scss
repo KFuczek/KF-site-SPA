@@ -10,6 +10,7 @@ $brass: #b6a644;
   outline: $brass solid 1px;
   outline-offset: -25px;
   width: fill-available;
+  width: -moz-available;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +47,7 @@ $brass: #b6a644;
 }
 
 .quote {
-  padding: 50px 30px;
+  padding: 60px 30px;
   height: min-content;
   display: flex;
   align-items: center;

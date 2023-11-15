@@ -4,9 +4,10 @@ import styles from './styles.module.scss';
 import LeftHeadAnimation from './left-head';
 import Envelope from './envelope';
 import TopBorder from './top-border';
+import Clock from '../../customComponents/clock';
 
 const MiddleScreen = forwardRef(
-  (props: any, ref: ForwardedRef<HTMLDivElement>) => {
+  ({ middleScreenRef }: any, ref: ForwardedRef<HTMLDivElement>) => {
     return (
       <div ref={ref} className={styles.intersectionMainAnimationsContainer}>
         <div id="borderMenu" className={styles.borderMenu}>
@@ -17,6 +18,9 @@ const MiddleScreen = forwardRef(
         </div>
         <div id="section2-right-side" className={styles.rightSide}>
           <Envelope />
+        </div>
+        <div className={styles.clockMoveField}>
+          <Clock />
         </div>
       </div>
     );

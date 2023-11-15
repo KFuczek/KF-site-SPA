@@ -18,6 +18,11 @@ $breakpoint-mobile: 420px;
   width: 350px;
   -webkit-box-shadow: px 2px 3px 1px rgba(0, 0, 0, .5);
   box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, .3);
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 250px;
+    width: 200px;
+  }
 }
 
 .border {
@@ -37,11 +42,17 @@ $breakpoint-mobile: 420px;
   overflow: hidden;
   height: 350px;
   width: fill-available;
+  width: -moz-available;
   margin: 0 40px;
 
   -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
   box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
   border: 2px inset #c9c9c9;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .text {

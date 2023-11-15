@@ -19,6 +19,52 @@ export default function Home() {
   const endScreenRef = useRef<HTMLElement | null>(null);
   const navBarRefContainer = useRef<HTMLElement | null>(null);
 
+  const implementCustomScrollLogic = () => {
+    mainFullscreenRef?.current?.addEventListener(
+      'wheel',
+      e => {
+        const { scrollTop, clientHeight, scrollHeight } =
+          mainFullscreenRef.current as HTMLDivElement;
+        const reachEndOfContainer =
+          clientHeight + scrollTop >= scrollHeight - 1 ||
+          clientHeight + scrollTop > 3000;
+
+        const scrollUp = () =>
+          mainFullscreenRef.current?.scrollTo(0, scrollTop - 20);
+        const scrollDown = () =>
+          mainFullscreenRef.current?.scrollTo(0, scrollTop + 20);
+        console.log(
+          clientHeight,
+          scrollTop,
+          clientHeight + scrollTop,
+          scrollHeight
+        );
+        if (reachEndOfContainer) {
+          console.log('end');
+          if (e.deltaY <= 0) {
+            scrollUp();
+          }
+        } else {
+          e.stopPropagation();
+          e.preventDefault();
+          if (e.deltaY > 0) {
+            scrollDown();
+          } else {
+            scrollUp();
+          }
+        }
+      },
+      { passive: false }
+    );
+  };
+
+  useEffect(() => {
+    if (!refAvailable) {
+      return;
+    }
+    implementCustomScrollLogic();
+  }, [refAvailable]);
+
   useEffect(() => {
     setIsSSR(false);
     toggleNavbar(true);
@@ -95,7 +141,6 @@ export default function Home() {
     const intersectionObserver = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          console.log(entry, entry.isIntersecting);
           hideMenuBorder(!entry.isIntersecting);
         });
       },
@@ -122,6 +167,7 @@ export default function Home() {
       <section className={styles.section2}>
         <MainMiddleScreen
           ref={(node: HTMLDivElement) => setRef(node, 'middle')}
+          middleScreenRef={middleScreenRef}
         />
       </section>
       <section className={styles.section3}>

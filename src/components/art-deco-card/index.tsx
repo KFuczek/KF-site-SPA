@@ -54,7 +54,7 @@ const ArtDecoCard = memo(function ArtDecoCard({
         if (entry.isIntersecting) {
           setTimeout(() => {
             setStartTyping(true);
-          }, 5000);
+          }, 2000);
         }
       });
     });

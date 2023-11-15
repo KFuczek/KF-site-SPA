@@ -17,9 +17,10 @@ $breakpoint-mobile: 420px;
   position: relative;
   width: 100%;
   display: flex;
+  flex-direction: column;
 
   grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
 
@@ -33,9 +34,9 @@ $breakpoint-mobile: 420px;
   height: 100px;
   z-index: 1000;
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 1;
-  grid-row-end: 4;
+  grid-row-end: 2;
 
   @media (max-width: $breakpoint-mobile) {
     height: 80px;
@@ -47,12 +48,25 @@ $breakpoint-mobile: 420px;
   height: 150vh;
   min-height: 1500px;
   display: grid;
-  grid-template-columns: 20vw 80vw;
+  grid-template-columns: 20vw 1fr 200px;
   grid-template-rows: 100px minmax(150px, min-content) 1fr;
 
   background-image: url('/wallpaper-art-deco.jpg');
 
   @media (max-width: $breakpoint-mobile) {
     grid-template-rows: 80px minmax(150px, min-content) 1fr;
+    grid-template-columns: 20vw 1fr 100px;
   }
+}
+
+.clockMoveField {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  left: 100%;
+  transform: translateX(-100%);
 }
