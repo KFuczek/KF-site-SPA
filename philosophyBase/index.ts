@@ -5,10 +5,7 @@ interface StoryURL {
   fileName: string;
 }
 
-const TITLES_FILE_NAMES = new Map([
-  ['story-1', 'Pierścień doktora Leukmatzena'],
-  ['story-2', 'Zwyczajne życie Pana Arkdiusza I']
-]);
+const TITLES_FILE_NAMES = new Map([['philo-1', 'tatuaże']]);
 
 const getStory = async (storyTitle: string, storyURLS: StoryURL[]) => {
   const requiredFileName = [...TITLES_FILE_NAMES].find(

@@ -2,7 +2,7 @@
 import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getHTTPGetWithCache } from '../../../helpers/url-helpers';
+import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
 import { Story } from '../../../types/story';
 
 export default function BookView() {
@@ -11,13 +11,15 @@ export default function BookView() {
   const [title, setTitle] = useState('');
 
   useEffect(() => {
-    const { storyId } = params;
+    const { ideaId } = params;
+
     const parameters = new URLSearchParams({
-      title: storyId
+      title: ideaId
     }) as unknown as string;
 
-    void getHTTPGetWithCache(
-      `/api/stories/story?${parameters}`,
+    void getHTTPGetWithLocalStorage(
+      ideaId,
+      `/api/philosophy/story?${parameters}`,
       3600 * 24
     ).then((data: Story) => {
       console.log('from server', data);

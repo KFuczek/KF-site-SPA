@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getTitles } from '../../../../storiesBase';
+import { getTitles } from '../../../../philosophyBase';
 import { getTitlesFromApi } from '../../../../src/backend-components/getTitles';
 
 export async function GET() {

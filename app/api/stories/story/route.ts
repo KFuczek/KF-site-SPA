@@ -1,49 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { list } from '@vercel/blob';
-//import { put, del, list } from '@vercel/blob';
-//import { promises as fs } from 'fs';
 import { getStory } from '../../../../storiesBase';
-
-interface Blob {
-  url: string;
-  pathname: string;
-  size: number;
-  uploadedAt: Date;
-}
-
-interface BlobList {
-  hasMore: boolean;
-  blobs: Blob[];
-}
+import { getStoryFromApi } from '../../../../src/backend-components/getTextFiles';
+//import { promises as fs } from 'fs';
+import { put } from '@vercel/blob';
 
 export async function GET(request: NextRequest) {
   const title = request.nextUrl.searchParams.get('title') || '';
-  const decodedTitle = decodeURI(title);
-
-  const blobList = (await list()) as BlobList;
-  const fileNames = blobList.blobs.map(({ url, pathname }) => {
-    return {
-      fileName: pathname,
-      url
-    };
-  });
-
-  const story: any = await getStory(decodedTitle, fileNames);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
-  const text = (await story?.text()) as unknown as string;
+  const text = await getStoryFromApi(title, getStory);
 
   return NextResponse.json({ text, title });
 }
 
 // export async function POST(request: NextRequest) {
-//   if (String(request.url) == 'localhost:3000') {
+//   if (String(request.url) !== 'http://localhost:3000/api/stories/story') {
 //     return;
 //   }
 //
-//   const fileName = 'story-2';
+//   const fileName = 'philo-1';
 //
 //   const file = await fs.readFile(
-//     process.cwd() + `/storiesBase/${fileName}.txt`,
+//     process.cwd() + `/philosophyBase/${fileName}.txt`,
 //     'utf8'
 //   );
 //
@@ -51,6 +27,7 @@ export async function GET(request: NextRequest) {
 //
 //   return NextResponse.json({ text: 'Blob set', blob });
 // }
+
 //
 // export async function DELETE(request: NextRequest) {
 //   if (String(request.url) == 'localhost:3000') {

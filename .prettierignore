@@ -17,6 +17,7 @@ lint-staged.config.js
 src/**/*.css
 storiesBase/**/*.txt
 storiesBase/**/*.scss
+philosophyBase/**/*.txt
 src/**/*.module.scss
 app/*.css
 app/*.scss
