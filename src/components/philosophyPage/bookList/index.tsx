@@ -20,7 +20,6 @@ export default function BookList() {
   const createStoriesList = (stories: string[]) => {
     return (
       <ul className={styles.list}>
-        Filozofero
         {stories.map(title => {
           const path = `philosophy/${title}`;
           return (

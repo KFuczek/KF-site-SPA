@@ -1,9 +1,12 @@
 'use client';
 import styles from './styles.module.scss';
+import CatClock from './catClock';
 
 const Clock = () => {
   return (
-    <div className={styles.clockContainer}> clock - work in progress </div>
+    <div className={styles.clockContainer}>
+      <CatClock />
+    </div>
   );
 };
 

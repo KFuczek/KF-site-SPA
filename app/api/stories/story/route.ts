@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getStory } from '../../../../storiesBase';
 import { getStoryFromApi } from '../../../../src/backend-components/getTextFiles';
 //import { promises as fs } from 'fs';
-import { put } from '@vercel/blob';
+//import { put } from '@vercel/blob';
 
 export async function GET(request: NextRequest) {
   const title = request.nextUrl.searchParams.get('title') || '';
@@ -30,9 +30,9 @@ export async function GET(request: NextRequest) {
 
 //
 // export async function DELETE(request: NextRequest) {
-//   if (String(request.url) == 'localhost:3000') {
-//     return;
-//   }
+//   // if (String(request.url) == 'localhost:3000') {
+//   //   return;
+//   // }
 //
 //   const urlToDelete = request.nextUrl.searchParams.get('url');
 //

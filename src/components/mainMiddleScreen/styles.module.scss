@@ -48,14 +48,14 @@ $breakpoint-mobile: 420px;
   height: 150vh;
   min-height: 1500px;
   display: grid;
-  grid-template-columns: 20vw 1fr 200px;
+  grid-template-columns: 20vw 1fr 400px;
   grid-template-rows: 100px minmax(150px, min-content) 1fr;
 
   background-image: url('/wallpaper-art-deco.jpg');
 
   @media (max-width: $breakpoint-mobile) {
     grid-template-rows: 80px minmax(150px, min-content) 1fr;
-    grid-template-columns: 20vw 1fr 100px;
+    grid-template-columns: 20vw 1fr 280px;
   }
 }
 

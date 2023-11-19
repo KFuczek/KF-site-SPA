@@ -1,0 +1,464 @@
+$breakpoint-mobile: 420px;
+
+@mixin paws {
+  position: absolute;
+  z-index: 2;
+  width: 7em;
+  height: 3em;
+  background: white;
+  border-radius: 40% 40% 50% 50%;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin claws {
+  height: 80%;
+  width: 25%;
+  display: inline-block;
+  background: white;
+  border-radius: inherit;
+  margin-top: 10%;
+  &::after {
+    content: '';
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    height: 1em;
+    width: .5em;
+    background: gray;
+    margin: 1em 0 0 .5em;
+  }
+}
+
+@mixin bowtie {
+  position: absolute;
+  height: 0;
+  width: 3em;
+  border: {
+    bottom: solid 3em white;
+    left: solid 1em transparent;
+    right: solid 1em transparent;
+  }
+}
+
+@mixin whiskers {
+  width: 2.5em;
+  height: 1em;
+  position: absolute;
+  border-bottom: solid .35em black;
+  border-radius: 0 0 50% 50%;
+}
+
+@mixin ears {
+  width: 2em;
+  height: 0;
+  position: absolute;
+  border: {
+    bottom: 3em solid black;
+    left: 2em solid transparent;
+    right: 2em solid transparent;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    margin: 1em 0 0 -1em;
+    height: 2em;
+    width: 2em;
+    border: {
+      bottom: solid 2em #262626;
+      left: solid 1em transparent;
+      right: solid 1em transparent;
+    }
+  }
+}
+
+.catContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.digitalClock {
+  position: relative;
+  margin: 0 auto;
+  margin-top: .5em;
+  font-family: 'Megrim', cursive;
+  background: black;
+  color: white;
+  font-size: 6em;
+}
+
+.head {
+  height: 12em;
+  width: 14em;
+  display: flex;
+  justify-content: center;
+  background: black;
+  margin: 0 auto;
+  margin-top: 3em;
+  padding: 0 1em 0 1em;
+  border-radius: 35% 35% 45% 45%;
+}
+
+.leftEar {
+  @include ears;
+  right: 60%;
+  top: 13px;
+  transform: rotate(-20deg);
+}
+
+.rightEar {
+  left: 60%;
+  top: 13px;
+  @include ears;
+  transform: rotate(20deg);
+}
+
+.nose {
+  width: 2.5em;
+  height: 2.5em;
+  z-index: 3;
+  margin-top: 4.25em;
+  position: absolute;
+  box-shadow: inset 0 1em .3em -.8em white, 0 0 .1em .1em gray, 0 .25em 0 .25em black;
+  background: black;
+  border-radius: 50%;
+}
+
+.mouth {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  height: 9em;
+  width: 12em;
+  margin-top: 1em;
+  border-bottom: solid 3.5em white;
+  border-radius: 0 0 50% 50%;
+
+  .leftWhiskers {
+    @include whiskers;
+    margin: 5.2em 0 0 -2.5em;
+    transform: rotate(-5deg);
+
+    &::after {
+      content: '';
+      @include whiskers;
+      margin: .5em 0 0 2em;
+      width: 1em;
+      transform: rotate(-5deg);
+    }
+  }
+
+  .rightWhiskers {
+    @include whiskers;
+    margin: 5.2em 0 0 2.5em;
+    transform: rotate(5deg);
+
+    &::after {
+      content: '';
+      @include whiskers;
+      margin: .5em 0 0 -.5em;
+      width: 1em;
+      transform: rotate(5deg);
+    }
+  }
+
+  &::before {
+    content: '';
+    margin-top: 3.75em;
+    height: 5em;
+    width: 6em;
+    border-bottom: solid 1.5em black;
+    border-radius: 0 0 50% 50%;
+  }
+}
+
+.eyes {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1em;
+  height: 5em;
+  width: 5em;
+  background: white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 1em .2em gray, 0 0 0em .1em gray;
+
+  &::before {
+    content: '';
+    margin-left: 1em;
+    position: absolute;
+    align-self: center;
+    height: 80%;
+    width: .75em;
+    border-radius: 2em;
+    background: black;
+  }
+}
+
+.bowtie {
+  z-index: 2;
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  background: white;
+  align-self: flex-end;
+  box-shadow: inset 0 0 .3em .2em black;
+
+  &::before {
+    content: '';
+    @include bowtie;
+    transform: rotate(90deg);
+    margin-left: -3em;
+    margin-top: -.75em;
+  }
+
+  &::after {
+    content: '';
+    @include bowtie;
+    transform: rotate(-90deg);
+    margin-left: 1.5em;
+    margin-top: -.75em;
+  }
+}
+
+
+.leftPaw {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  @include paws;
+  transform: translate(-15px, 47px) rotate(-55deg);
+  box-shadow: inset 0 0 .5em 1em black;
+}
+
+.claws {
+  @include claws;
+  box-shadow: inset 0 0 1em .75em black;
+}
+
+.rightPaw {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  @include paws;
+  transform: translate(25px, 57px) rotate(55deg);
+  box-shadow: inset 0 0 1em 1em black;
+}
+
+.claws {
+  @include claws;
+  box-shadow: inset 0 0 1em .75em black;
+}
+
+.leftFoot {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  @include paws;
+  width: 70%;
+  height: 60%;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  justify-self: flex-end;
+  box-shadow: 0 0 0 .1em #262626, inset 0 .5em .5em .5em black;
+  border-radius: 40% 40% 10% 10%;
+}
+
+.claws {
+  @include claws;
+  box-shadow: inset 0 0 1em .75em black;
+}
+
+.rightFoot {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  @include paws;
+  width: 70%;
+  height: 60%;
+  top: 5px;
+  display: flex;
+  justify-content: center;
+  justify-self: flex-start;
+  box-shadow: 0 0 0 .1em #262626, inset 0 .5em .5em .5em black;
+  border-radius: 40% 40% 10% 10%;
+}
+
+.claws {
+  @include claws;
+  box-shadow: inset 0 0 1em .75em black;
+}
+
+.catBody {
+  display: grid;
+  grid-template-rows: 20% 1fr 20%;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 270px;
+  border-radius: 40% 40% 30% 30%;
+  background: black;
+  margin: 0 auto;
+  margin-top: -1em;
+}
+
+.tail {
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  top: 60px;
+  height: 600px;
+  width: 2em;
+  //background: black;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  border-radius: 0 0 1em 0;
+  transform: rotate(20deg);
+
+  animation-name: rotateTail;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+.curve {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  border-radius: 1em 2em 2em 3em;
+  transform: rotate(10deg);
+  border: {
+    left: solid 2em black;
+    bottom: solid 2em black;
+  }
+  align-self: flex-end;
+  margin: -.2em 0 0 -4em;
+}
+
+.analogClock {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 11em;
+  width: 11em;
+  border: solid 1px gray;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 0 .1em gray, inset 0 0 1em .3em black, 0 0 0 .2em white;
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    background: black;
+    align-self: center;
+    border-radius: 50%;
+  }
+}
+
+.hands {
+  background: black;
+  position: absolute;
+  border-radius: 0 0 1em 1em;
+  transform-origin: 50% 100%;
+}
+
+.seconds {
+  width: .2em;
+  height: 45%;
+  margin-top: 5%;
+}
+
+.minutes {
+  width: .5em;
+  height: 40%;
+  margin-top: 10%;
+}
+
+.hours {
+  width: .7em;
+  height: 25%;
+  margin-top: 25%;
+}
+
+
+//
+.span {
+  position: absolute;
+  font-size: 1em;
+  font-weight: bold;
+  transform-origin: bottom center;
+  height: 5.5em;
+  margin-left: -2%;
+}
+
+.clockNumberContainer {
+  position: absolute;
+  font-size: 1.5em;
+  inset: 0;
+  text-align: center;
+}
+
+.clockNumber {
+  position: absolute;
+}
+
+.eyes::before {
+  animation-name: turnEyes;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes rotateTail {
+  0% {
+    transform: rotate(20deg)
+  }
+  25% {
+    transform: rotate(10deg)
+  }
+  50% {
+    transform: rotate(0deg)
+  }
+  75% {
+    transform: rotate(-10deg)
+  }
+  100% {
+    transform: rotate(-20deg)
+  }
+}
+
+@keyframes turnEyes {
+  0% {
+    margin-left: 0em
+  }
+  25% {
+    margin-left: 1em
+  }
+  50% {
+    margin-left: 2em
+  }
+  75% {
+    margin-left: 3em
+  }
+  100% {
+    margin-left: 4em
+  }
+}
+
