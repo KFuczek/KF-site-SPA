@@ -382,6 +382,7 @@ $breakpoint-mobile: 420px;
   width: .2em;
   height: 45%;
   margin-top: 5%;
+  background-color: red;
 }
 
 .minutes {
@@ -409,6 +410,8 @@ $breakpoint-mobile: 420px;
 
 .clockNumberContainer {
   position: absolute;
+  display: flex;
+  justify-content: center;
   font-size: 1.5em;
   inset: 0;
   text-align: center;
@@ -416,6 +419,7 @@ $breakpoint-mobile: 420px;
 
 .clockNumber {
   position: absolute;
+  font-family: "Playball", cursive;
 }
 
 .eyes::before {

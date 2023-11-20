@@ -10,7 +10,6 @@ $brass: #b6a644;
   top: 100px;
   width: 100%;
   height: 400px;
-  border: solid red 2px;
   @media (max-width: $breakpoint-mobile) {
     width: 100%;
     height: fit-content;

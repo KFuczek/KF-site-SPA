@@ -14,9 +14,9 @@ const CatClock = () => {
       const minute = date.getMinutes();
       const second = date.getSeconds();
 
-      const hourDegree = hour * (360 / 12);
       const minuteDegree = minute * (360 / 60);
       const secondDegree = second * (360 / 60);
+      const hourDegree = hour * (360 / 12) + minuteDegree / 12;
 
       if (hourRef.current?.style) {
         hourRef.current.style.transform = `rotate(${hourDegree}deg)`;
@@ -35,12 +35,8 @@ const CatClock = () => {
 
   const getClockNumbers = () => {
     return new Array(12).fill(null).map((a, index) => {
-      const transformContainer = `rotate(calc((${
-        index + 1
-      } * (360deg / 12)) - 10deg))`;
-      const transformNumber = `rotate(calc((${
-        index + 1
-      } * (-360deg / 12)) + 10deg))`;
+      const transformContainer = `rotate(calc((${index + 1} * (360deg / 12))))`;
+      const transformNumber = `rotate(calc((${index + 1} * (-360deg / 12))))`;
       return (
         <span
           key={`number${index}`}
