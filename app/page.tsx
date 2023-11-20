@@ -55,9 +55,9 @@ export default function Home() {
       passive: false
     });
     //  for mobile
-    mainFullscreenRef?.current?.addEventListener('touchmove', onWheel, {
-      passive: false
-    });
+    // mainFullscreenRef?.current?.addEventListener('touchmove', onWheel, {
+    //   passive: false
+    // });
   };
 
   useEffect(() => {

@@ -11,8 +11,10 @@ $breakpoint-mobile: 420px;
   overflow-y: hidden;
   background-color: black;
   overflow-x: hidden;
-  // -ms-overflow-style: none; /* IE and Edge */
-  // scrollbar-width: none; /* Firefox */
+
+  @media (max-width: $breakpoint-mobile) {
+    overflow-y: auto;
+  }
 }
 
 //.wrapper::-webkit-scrollbar {
