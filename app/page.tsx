@@ -20,37 +20,44 @@ export default function Home() {
   const navBarRefContainer = useRef<HTMLElement | null>(null);
 
   const implementCustomScrollLogic = () => {
-    mainFullscreenRef?.current?.addEventListener(
-      'wheel',
-      e => {
-        const { scrollTop, clientHeight, scrollHeight } =
-          mainFullscreenRef.current as HTMLDivElement;
-        const reachEndOfContainer =
-          clientHeight + scrollTop >= scrollHeight - 1 ||
-          clientHeight + scrollTop > 3000;
+    const onWheel = (e: any) => {
+      const { scrollTop, clientHeight, scrollHeight } =
+        mainFullscreenRef.current as HTMLDivElement;
+      const reachEndOfContainer =
+        clientHeight + scrollTop >= scrollHeight - 1 ||
+        clientHeight + scrollTop > 3000;
 
-        const scrollUp = () =>
-          mainFullscreenRef.current?.scrollTo(0, scrollTop - 20);
-        const scrollDown = () =>
-          mainFullscreenRef.current?.scrollTo(0, scrollTop + 20);
+      const scrollUp = () =>
+        mainFullscreenRef.current?.scrollTo(0, scrollTop - 20);
+      const scrollDown = () =>
+        mainFullscreenRef.current?.scrollTo(0, scrollTop + 20);
 
-        if (reachEndOfContainer) {
-          console.log('end');
-          if (e.deltaY <= 0) {
-            scrollUp();
-          }
-        } else {
-          e.stopPropagation();
-          e.preventDefault();
-          if (e.deltaY > 0) {
-            scrollDown();
-          } else {
-            scrollUp();
-          }
+      if (reachEndOfContainer) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        if (e.deltaY <= 0) {
+          scrollUp();
         }
-      },
-      { passive: false }
-    );
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+        e.stopPropagation();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
+        e.preventDefault();
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        if (e.deltaY > 0) {
+          scrollDown();
+        } else {
+          scrollUp();
+        }
+      }
+    };
+
+    mainFullscreenRef?.current?.addEventListener('wheel', onWheel, {
+      passive: false
+    });
+    //  for mobile
+    mainFullscreenRef?.current?.addEventListener('touchmove', onWheel, {
+      passive: false
+    });
   };
 
   useEffect(() => {
