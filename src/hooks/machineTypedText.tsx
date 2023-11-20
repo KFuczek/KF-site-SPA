@@ -19,12 +19,6 @@ export const useMachineTypedText = (
     }
 
     if (letterIndex.current >= words[wordIndex.current].length) {
-      console.log(
-        'next word',
-        words[wordIndex.current],
-        letterIndex.current,
-        words[wordIndex.current].length
-      );
       wordIndex.current = wordIndex.current + 1;
       setCurrentWord(currentWord.concat(' '));
       setFullText(currentWord.concat(' '));

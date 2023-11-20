@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getStory } from '../../../../storiesBase';
 import { getStoryFromApi } from '../../../../src/backend-components/getTextFiles';
 //import { promises as fs } from 'fs';
-//import { put } from '@vercel/blob';
+//import { put, del } from '@vercel/blob';
 
 export async function GET(request: NextRequest) {
   const title = request.nextUrl.searchParams.get('title') || '';
@@ -12,14 +12,14 @@ export async function GET(request: NextRequest) {
 }
 
 // export async function POST(request: NextRequest) {
-//   if (String(request.url) !== 'http://localhost:3000/api/stories/story') {
-//     return;
-//   }
+//   // if (String(request.url) !== 'http://localhost:3000/api/stories/story') {
+//   //   return;
+//   // }
 //
-//   const fileName = 'philo-1';
+//   const fileName = 'road-1';
 //
 //   const file = await fs.readFile(
-//     process.cwd() + `/philosophyBase/${fileName}.txt`,
+//     process.cwd() + `/roadBase/${fileName}.txt`,
 //     'utf8'
 //   );
 //
@@ -36,7 +36,7 @@ export async function GET(request: NextRequest) {
 //
 //   const urlToDelete = request.nextUrl.searchParams.get('url');
 //
-//    await del(urlToDelete);
+//   await del(urlToDelete);
 //
 //   return NextResponse.json({ text: 'Blob removed', urlToDelete });
 // }

@@ -33,12 +33,7 @@ export default function Home() {
           mainFullscreenRef.current?.scrollTo(0, scrollTop - 20);
         const scrollDown = () =>
           mainFullscreenRef.current?.scrollTo(0, scrollTop + 20);
-        console.log(
-          clientHeight,
-          scrollTop,
-          clientHeight + scrollTop,
-          scrollHeight
-        );
+
         if (reachEndOfContainer) {
           console.log('end');
           if (e.deltaY <= 0) {

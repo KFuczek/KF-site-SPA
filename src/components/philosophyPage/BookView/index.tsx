@@ -22,7 +22,6 @@ export default function BookView() {
       `/api/philosophy/story?${parameters}`,
       3600 * 24
     ).then((data: Story) => {
-      console.log('from server', data);
       setTitle(data.title);
       setText(data.text);
     });
