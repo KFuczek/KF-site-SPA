@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
-import { Story } from '../../../types/story';
+import { TextObject } from '../../../types/backendTextTypes';
 
 export default function BookView() {
   const params = useParams();
@@ -20,10 +20,9 @@ export default function BookView() {
       storyId,
       `/api/stories/story?${parameters}`,
       3600 * 24
-    ).then((data: any) => {
-      const story = data as Story;
-      setTitle(story.title);
-      setText(story.text);
+    ).then((story: TextObject) => {
+      setTitle(story.Title);
+      setText(story.Text);
     });
   }, []);
 
