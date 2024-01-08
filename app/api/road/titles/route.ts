@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { getTitlesFromApi } from '@/src/backend-controllers/getTitles';
 import { Titles } from '@/app/api/types';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   const titles = await getTitlesFromApi();
 

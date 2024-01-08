@@ -1,5 +1,7 @@
 import { getQuoteByIdFromApi } from '@/src/backend-controllers/getQuotes';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: any) {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument,@typescript-eslint/no-unsafe-member-access
   const { searchParams } = new URL(request.url);
