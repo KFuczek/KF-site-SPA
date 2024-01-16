@@ -5,4 +5,4 @@ export interface TextObject {
   ExtendedTitle: string;
 }
 
-export type TitlesPair = [string, string];
+export type TitlesPair = [string, string, string];
