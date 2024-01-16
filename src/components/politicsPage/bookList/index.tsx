@@ -1,9 +1,9 @@
 'use client';
 import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
 import { TitlesPair } from '../../../types/backendTextTypes';
+import BioPunkTable from '@/src/customComponents/biopunkTable';
 
 export default function BookList() {
   const [data, setData] = useState<TitlesPair[]>([]);
@@ -18,21 +18,9 @@ export default function BookList() {
     });
   }, []);
 
-  const createStoriesList = (stories: TitlesPair[]) => {
-    return (
-      <ul className={styles.list}>
-        {stories.map(titleArr => {
-          const [extendedtitle, title] = titleArr;
-          const path = `road/${title}`;
-          return (
-            <li key={title} className={styles.crotch}>
-              <Link href={path}>{extendedtitle}</Link>
-            </li>
-          );
-        })}
-      </ul>
-    );
-  };
-
-  return <div className={styles.container}>{createStoriesList(data)}</div>;
+  return (
+    <div className={styles.page}>
+      <BioPunkTable data={data} />
+    </div>
+  );
 }

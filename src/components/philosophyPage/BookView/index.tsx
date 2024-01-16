@@ -22,7 +22,7 @@ export default function BookView() {
       `/api/philosophy/story?${parameters}`,
       3600 * 24
     ).then((data: TextObject) => {
-      setTitle(data.Title);
+      setTitle(data.ExtendedTitle);
       setText(data.Text);
     });
   }, []);
@@ -30,7 +30,7 @@ export default function BookView() {
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>
-        <div className={styles.title}>{decodeURI(title)} </div>
+        <div className={styles.title}>{title} </div>
         <div className={styles.text}> {text}</div>
       </div>
     </div>

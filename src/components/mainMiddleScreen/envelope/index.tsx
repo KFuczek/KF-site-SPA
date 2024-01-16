@@ -20,13 +20,12 @@ export default function Envelope() {
   useEffect(() => {
     const path = '/api/quote';
     // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    const params = `number=${quoteIndex}`;
+    //const params = `number=${quoteIndex}`; change to random
+    const params = `number=${String(Math.floor(Math.random() * 1000))}`;
     const url = `${path}?${params}`;
-    void getHTTPGet(url).then(quote => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    void getHTTPGet(url).then((quote: { text: string; author: string }) => {
       setQuote(quote);
-      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-      setQuoteIndex(quoteIndex + 1);
+      setQuoteIndex(Number(quoteIndex) + 1);
     });
   }, []);
 

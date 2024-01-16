@@ -3,9 +3,9 @@ export interface Titles {
 }
 
 interface TitlesCategory {
-  philosophy: TitlesPair[];
-  stories: TitlesPair[];
-  road: TitlesPair[];
+  philosophy: TitlesParameters[];
+  stories: TitlesParameters[];
+  road: TitlesParameters[];
 }
 
-type TitlesPair = [string, string];
+export type TitlesParameters = [string, string, string];
