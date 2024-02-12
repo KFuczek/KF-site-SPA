@@ -14,6 +14,7 @@ $breakpoint-mobile: 420px;
 }
 
 .rightSide {
+  z-index: 2;
   position: relative;
   width: 100%;
   display: flex;
@@ -55,7 +56,7 @@ $breakpoint-mobile: 420px;
 
   @media (max-width: $breakpoint-mobile) {
     grid-template-rows: 80px minmax(150px, min-content) 1fr;
-    grid-template-columns: 20vw 1fr 280px;
+    grid-template-columns: 20vw 1fr 80px;
   }
 }
 
@@ -67,6 +68,8 @@ $breakpoint-mobile: 420px;
   position: relative;
   height: 100%;
   width: 100%;
-  left: 100%;
-  transform: translateX(-100%);
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 106%;
+  }
 }

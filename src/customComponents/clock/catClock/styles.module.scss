@@ -77,6 +77,11 @@ $breakpoint-mobile: 420px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    transform: scale(0.3);
+    margin: -95px 0;
+  }
 }
 
 .digitalClock {

@@ -9,10 +9,10 @@ $brass: #b6a644;
   align-items: center;
   top: 100px;
   width: 100%;
-  height: 400px;
+  height: fit-content;
   @media (max-width: $breakpoint-mobile) {
     width: 100%;
     height: fit-content;
-    top: 80px
+    top: 0;
   }
 }
