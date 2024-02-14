@@ -6,7 +6,6 @@ $breakpoint-mobile: 420px;
   background-color: seagreen;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
 
   @media (max-width: $breakpoint-mobile) {
 

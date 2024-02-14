@@ -1,0 +1,62 @@
+$breakpoint-mobile: 420px;
+
+.container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: red;
+  @media (max-width: $breakpoint-mobile) {
+
+  }
+}
+
+.avatarBackground {
+  width: 100%;
+  border: solid green 1px;
+  aspect-ratio: 3.3/2;
+  margin-bottom: 50%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+}
+
+.avatarFoto {
+  position: absolute;
+  width: 60%;
+  border: solid black 1px;
+  aspect-ratio: 1;
+  top: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  @media (max-width: $breakpoint-mobile) {
+    top: 50px
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.name {
+  width: 100%;
+  height: 10%;
+  border: solid yellow 1px;
+  max-height: 230px;
+}
+
+.description {
+  width: 100%;
+  height: 10%;
+  border: solid blue 1px;
+  max-height: 230px;
+}
