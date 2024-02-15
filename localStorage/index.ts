@@ -6,7 +6,7 @@ interface DataWithTime {
 export const addToLocalStorage = (key: string, data: never): void => {
   const dateWithTime = {
     data,
-    time: new Date()
+    time: new Date().getTime()
   };
   localStorage.setItem(key, JSON.stringify(dateWithTime));
 };
@@ -27,11 +27,12 @@ export const removeFromLocalStorage = (key: string): void => {
 
 export const checkDataIsExpired = (
   date: Date,
-  expireTime = 60 * 60 * 1000
+  expireTime = 60 * 60 * 24
 ): boolean => {
+  const expireTimeInMs = expireTime * 1000;
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore:next-line
-  return new Date() - date < expireTime;
+  return new Date().getTime() - date < expireTimeInMs;
 };
 
 export const getFromLocalStorageWithExpireTime = (

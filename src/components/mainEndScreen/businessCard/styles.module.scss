@@ -6,9 +6,6 @@ $breakpoint-mobile: 420px;
   display: flex;
   flex-direction: row;
 
-
-
-  background-color: green;
   @media (max-width: $breakpoint-mobile) {
 
   }
@@ -19,6 +16,7 @@ $breakpoint-mobile: 420px;
   width: 30%;
   max-width: 400px;
   height: 100%;
+  border-right: 1px solid black;
 
   @media (max-width: $breakpoint-mobile) {
     width: 200px;
@@ -28,13 +26,12 @@ $breakpoint-mobile: 420px;
 .bodyWrapper {
   width: fill-available;
   height: 100%;
-  background-image: url('/wallpaper3.jpg');
+  background-color: #F3E5CE;
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
   @media (max-width: $breakpoint-mobile) {
-    background-image: unset;
-    background-color: #6eccee;
+
   }
 }
 
