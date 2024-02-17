@@ -1,9 +1,9 @@
 'use client';
-import styles from './styles.module.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { getHTTPGetWithLocalStorage } from '../../../helpers/url-helpers';
-import { TextObject } from '../../../types/backendTextTypes';
+import { getHTTPGetWithLocalStorage } from '@/src/helpers/url-helpers';
+import StoryView from '@/src/customComponents/storyView';
+import { TextObject } from '@/src/types/backendTextTypes';
 
 export default function BookView() {
   const params = useParams();
@@ -26,12 +26,5 @@ export default function BookView() {
     });
   }, []);
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.textContainer}>
-        <div className={styles.title}>{title} </div>
-        <div className={styles.text}> {text}</div>
-      </div>
-    </div>
-  );
+  return <StoryView text={text} title={title} />;
 }

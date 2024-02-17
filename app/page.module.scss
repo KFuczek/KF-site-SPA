@@ -1,4 +1,5 @@
 //@custom-media --big (width >= 400px); // zrobić takie zmienne i ich yżywać zamst zwykłych media qyery. mozę używac jaki mixinów ?
+$breakpoint-mobile: 420px;
 
 .frontPage {
   height: 100vh;
@@ -7,7 +8,45 @@
 .sectionContainer {
   height: fill-available;
   max-height: 100vh;
-  overflow: scroll;
+  max-width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    background-color: #D62929;
+    background-image: -webkit-linear-gradient(90deg,
+            transparent,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent,
+            transparent);
+    width: 10px;
+    @media (max-width: $breakpoint-mobile) {
+      width: 0px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  /*style the thumb of your scrollbar*/
+  &::-webkit-scrollbar-thumb {
+    background: repeating-linear-gradient(
+                    120deg,
+                    green 0 7%,
+                    white 8% 15%
+    );
+    border-radius: 100vw;
+    border: solid 2px hsl(120 5% 0% /1);
+  }
+
+
+
+
+
+
+
+
 }
 
 .section1 {

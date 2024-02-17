@@ -10,12 +10,12 @@ const Card = () => {
         <Image
           src={'/atelier.png'}
           alt="atelier"
-          width={100}
-          height={100}
+          width={300}
+          height={300}
         ></Image>
       </div>
       <div className={styles.avatarFoto}>
-        <Image src={'/ja.jpeg'} alt="avatar" width={100} height={100}></Image>
+        <Image src={'/ja.jpeg'} alt="avatar" width={300} height={300}></Image>
       </div>
       <div className={styles.avatarFotoBackground}>
         <Image src={'/logo.png'} alt="logo" width={100} height={100}></Image>

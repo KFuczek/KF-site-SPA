@@ -1,7 +1,9 @@
 .container {
+  display: flex;
+  flex-direction: row;
   background-color: black;
-  overflow: scroll;
   height: 100%;
+  overflow-y: scroll;
 }
 
 .textContainer {
@@ -12,9 +14,20 @@
   color: white;
   line-height: 1.25em;
   letter-spacing: .05em;
-  margin: 0 10%;
+  margin-left: 5%;
+  width: 90%;
+  height: fit-content;
 }
 
 .title {
   font-family: "Mona Sans", Helvetica, Arial, serif;
+}
+
+.text {
+
+}
+
+.scrollLine {
+  width: 10%;
+  height: 100%;
 }
