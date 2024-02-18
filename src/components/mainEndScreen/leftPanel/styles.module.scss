@@ -107,9 +107,10 @@ $breakpoint-mobile: 420px;
   max-height: 230px;
   display: flex;
   align-items: center;
-  margin-right: 3px;
+  font-size: 1.5rem;
+  padding-left: 10px;
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: 10px
+    font-size: 0.8rem;
   }
 }

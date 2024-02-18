@@ -1,3 +1,5 @@
+$breakpoint-mobile: 420px;
+
 .container {
   display: flex;
   flex-direction: row;
@@ -17,14 +19,34 @@
   margin-left: 5%;
   width: 90%;
   height: fit-content;
+  padding-bottom: 100px;
 }
 
 .title {
-  font-family: "Mona Sans", Helvetica, Arial, serif;
+  font-family: "Playfair Display", serif;
+
+  display: inline-block;
+  margin: 30px 0;
+  padding: 0 10px;
+  font-size: 5rem;
+  line-height: 1;
+  background: linear-gradient(to right, transparent 50%, #ffcc00 50%);
+  background-size: 130%;
+  background-position: 0;
+  transition: all 500ms ease;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.5rem;
+    background-size: 200%;
+  }
+
+  &:hover {
+    background-position: -100%;
+  }
 }
 
 .text {
-
+  //font-family: "Mona Sans", Helvetica, Arial, serif;
 }
 
 .scrollLine {
