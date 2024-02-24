@@ -32,7 +32,7 @@ export const checkDataIsExpired = (
   const expireTimeInMs = expireTime * 1000;
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore:next-line
-  return new Date().getTime() - date < expireTimeInMs;
+  return new Date().getTime() - date > expireTimeInMs;
 };
 
 export const getFromLocalStorageWithExpireTime = (
