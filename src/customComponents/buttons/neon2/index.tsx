@@ -7,17 +7,22 @@ export default function NeonButton({
   url,
   name
 }: {
-  url: string;
+  url?: string;
   name: string;
 }) {
-  const { push } = useRouter();
+  const { push, back } = useRouter();
+
+  const onClick = () => {
+    if (url) {
+      push(url);
+      return;
+    }
+
+    back();
+  };
+
   return (
-    <button
-      className={styles.container}
-      onClick={() => {
-        push(url);
-      }}
-    >
+    <button className={styles.container} onClick={onClick}>
       <div className={`${styles.flux} ${neon.className}`}>{name}</div>
     </button>
   );
