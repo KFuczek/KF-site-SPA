@@ -5,6 +5,15 @@ $breakpoint-mobile: 420px;
   flex-direction: row;
   justify-content: flex-end;
   height: 100%;
+  text-decoration-color: transparent;
+
+  &:visited {
+    text-decoration-color: transparent;
+  }
+
+  &:active {
+    text-decoration-color: transparent;
+  }
 }
 
 .textWrapper {
@@ -23,6 +32,25 @@ $breakpoint-mobile: 420px;
   width: fit-content;
   top: 0;
   -webkit-font-smoothing: antialiased;
+
+  @media (max-width: $breakpoint-mobile) {
+    cursor: pointer;
+    animation-name: moveDown;
+    animation-duration: 4s;
+    animation-iteration-count: 3;
+  }
+
+  &:hover {
+    cursor: pointer;
+    animation-name: moveDown;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes moveDown {
+    from {transform: translateY(0px)}
+    to {transform: translateY(70px)}
+  }
 }
 
 
@@ -118,4 +146,3 @@ $breakpoint-mobile: 420px;
   border-bottom: 400px solid rgba(5, 5, 5, 0.33);
   transform: rotate(15deg);
 }
-

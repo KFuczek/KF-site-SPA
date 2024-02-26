@@ -9,7 +9,11 @@ import Clock from '../../customComponents/clock';
 const MiddleScreen = forwardRef(
   ({ middleScreenRef }: any, ref: ForwardedRef<HTMLDivElement>) => {
     return (
-      <div ref={ref} className={styles.intersectionMainAnimationsContainer}>
+      <div
+        id="middle"
+        ref={ref}
+        className={styles.intersectionMainAnimationsContainer}
+      >
         <div id="borderMenu" className={styles.borderMenu}>
           <TopBorder />
         </div>

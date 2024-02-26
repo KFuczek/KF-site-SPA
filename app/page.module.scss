@@ -1,4 +1,3 @@
-//@custom-media --big (width >= 400px); // zrobić takie zmienne i ich yżywać zamst zwykłych media qyery. mozę używac jaki mixinów ?
 $breakpoint-mobile: 420px;
 
 .frontPage {
@@ -11,6 +10,7 @@ $breakpoint-mobile: 420px;
   max-width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     background-color: #D62929;
@@ -39,14 +39,6 @@ $breakpoint-mobile: 420px;
     border-radius: 100vw;
     border: solid 2px hsl(120 5% 0% /1);
   }
-
-
-
-
-
-
-
-
 }
 
 .section1 {

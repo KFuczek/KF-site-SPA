@@ -135,7 +135,9 @@ $breakpoint-mobile: 420px;
 .barContainer {
   position: absolute;
   bottom: 0;
-  z-index: 1000;
+  width: fit-content;
+  left: 38%;
+  z-index: 1;
   transform: translateZ(5px) translate(0, -20vh) scale(0.5);
 }
 
@@ -145,4 +147,5 @@ $breakpoint-mobile: 420px;
   top: 15%;
   position: absolute;
   transform: scale(0.5);
+  z-index: 10;
 }

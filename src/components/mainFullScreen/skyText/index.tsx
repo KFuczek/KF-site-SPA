@@ -3,7 +3,7 @@ import { outrun, openSans } from '../../../fonts';
 
 export default function Sun() {
   return (
-    <div className={styles.textContainer}>
+    <a className={styles.textContainer} href="#middle">
       <div className={styles.textWrapper}>
         <div className={styles.triangle} />
         <div className={`${styles.text} ${openSans.className}`}>
@@ -36,6 +36,6 @@ export default function Sun() {
           </span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
