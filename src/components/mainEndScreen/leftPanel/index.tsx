@@ -27,13 +27,13 @@ const Card = () => {
         <span>Fuczkowiecki</span>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        [pseudo]~pisarz
+        <a href="/stories">[pseudo]~pisarz</a>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        [pseudo]~filozof
+        <a href="/philosophy">[pseudo]~filozof</a>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        [pseudo]~polityk
+        <a href="/road">[pseudo]~polityk</a>
       </div>
     </div>
   );

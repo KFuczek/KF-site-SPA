@@ -6,10 +6,11 @@ $breakpoint-mobile: 420px;
   border-radius: 1rem;
 
   background: linear-gradient(#00121B, #000102);
-  overflow: hidden;
+  overflow: scroll;
   font-family: "Cairo", sans-serif;
   width: 80%;
   height: fit-content;
+  max-height: 90vh;
 
   @media (max-width: $breakpoint-mobile) {
     width: 100%;

@@ -24,7 +24,7 @@ export default function TitleFormatter() {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       setTextContent(text);
-    }, 500);
+    }, 1000);
   };
   const textInput = () => {
     return (

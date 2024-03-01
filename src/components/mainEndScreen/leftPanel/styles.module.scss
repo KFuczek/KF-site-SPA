@@ -110,6 +110,12 @@ $breakpoint-mobile: 420px;
   font-size: 1.5rem;
   padding-left: 10px;
 
+  a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+
   @media (max-width: $breakpoint-mobile) {
     font-size: 0.8rem;
   }

@@ -142,7 +142,18 @@ $breakpoint-mobile: 420px;
   top: 0;
   left: 10%;
   border-left: 250px solid transparent;
-  border-right: 450px solid transparent;
+  border-right: 250px solid transparent;
   border-bottom: 400px solid rgba(5, 5, 5, 0.33);
-  transform: rotate(15deg);
+  transform: rotate(180deg);
+
+  text-shadow:
+          0 0 10px red,
+          0 0 20px green,
+          0 0 40px blue,
+          0 0 80px orange;
+
+  @media (max-width: $breakpoint-mobile) {
+    left: -100px;
+  }
+
 }
