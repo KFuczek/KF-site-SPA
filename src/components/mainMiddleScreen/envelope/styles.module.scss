@@ -122,6 +122,7 @@ $breakpoint-mobile: 420px;
 
   @media (max-width: $breakpoint-mobile) {
     min-height: 150px;
+    height: auto;
   }
 }
 

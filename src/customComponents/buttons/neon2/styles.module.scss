@@ -1,3 +1,5 @@
+$breakpoint-mobile: 420px;
+
 .container {
   height: 45px;
   width: 130px;
@@ -6,6 +8,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 25px;
+    width: 100px;
+  }
 }
 
 .flux {
@@ -19,6 +26,9 @@
   -webkit-animation: flux 2s linear infinite;
   -o-animation: flux 2s linear infinite;
 
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 18px;
+  }
 }
 
 @keyframes flux {

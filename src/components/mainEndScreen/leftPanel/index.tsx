@@ -35,6 +35,20 @@ const Card = () => {
       <div className={`${styles.description} ${luminari.className}`}>
         <a href="/road">[pseudo]~polityk</a>
       </div>
+      <div className={`${styles.socialMediaLink} ${luminari.className}`}>
+        <a
+          href="https://www.youtube.com/@Pan_Fuczkowiecki_drugi"
+          target="_blank"
+        >
+          <span> YouTube - </span>
+          <Image
+            src={'/youtube.jpg'}
+            alt="logo"
+            width={100}
+            height={100}
+          ></Image>
+        </a>
+      </div>
     </div>
   );
 };

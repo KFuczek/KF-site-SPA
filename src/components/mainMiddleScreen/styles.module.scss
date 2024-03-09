@@ -19,7 +19,7 @@ $breakpoint-mobile: 420px;
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  transition: all 2s ease;
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 2;
@@ -49,13 +49,14 @@ $breakpoint-mobile: 420px;
   height: 150vh;
   min-height: 1500px;
   display: grid;
-  grid-template-columns: 20vw 1fr 400px;
-  grid-template-rows: 100px minmax(150px, min-content) 1fr;
 
+  grid-template-columns: 20vw 1fr 400px;
+ // grid-template-rows: 100px minmax(150px, min-content) 1fr;
+  grid-template-rows: min-content min-content auto;
   background-image: url('/wallpaper-art-deco.jpg');
 
   @media (max-width: $breakpoint-mobile) {
-    grid-template-rows: 80px minmax(150px, min-content) 1fr;
+  //  grid-template-rows: 80px minmax(150px, min-content) 1fr;
     grid-template-columns: 20vw 1fr 80px;
   }
 }
@@ -72,4 +73,15 @@ $breakpoint-mobile: 420px;
   @media (max-width: $breakpoint-mobile) {
     height: 106%;
   }
+}
+
+.mainColumn {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }

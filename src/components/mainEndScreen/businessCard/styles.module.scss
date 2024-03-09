@@ -5,10 +5,6 @@ $breakpoint-mobile: 420px;
   width: 100%;
   display: flex;
   flex-direction: row;
-
-  @media (max-width: $breakpoint-mobile) {
-
-  }
 }
 
 .leftPanelWrapper {
@@ -29,9 +25,16 @@ $breakpoint-mobile: 420px;
   background-color: #F3E5CE;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  @media (max-width: $breakpoint-mobile) {
-
-  }
+.constructionSite {
+  width: 80%;
+  height: 80%;
+  border: solid black 1px;
+  background-image: url('/construction.jpg');
+  background-size: contain;
 }
 

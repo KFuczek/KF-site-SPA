@@ -120,3 +120,41 @@ $breakpoint-mobile: 420px;
     font-size: 0.8rem;
   }
 }
+
+ .socialMediaLink {
+  width: 100%;
+  height: 10%;
+  border-bottom: solid black 1px;
+  max-height: 230px;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  padding-left: 10px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    height: fill-available;
+    width: fill-available;
+  }
+
+   img {
+     height: 80%;
+     aspect-ratio: 1;
+   }
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.8rem;
+
+    img {
+      height: 30px;
+      width: 35px;
+      aspect-ratio: 1;
+    }
+  }
+}

@@ -8,7 +8,9 @@ const BusinessCard = () => {
       <div className={styles.leftPanelWrapper}>
         <LeftPanel />
       </div>
-      <div className={styles.bodyWrapper}></div>
+      <div className={styles.bodyWrapper}>
+        <div className={styles.constructionSite}> Work in progress...</div>
+      </div>
     </div>
   );
 };
