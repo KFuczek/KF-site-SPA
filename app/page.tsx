@@ -169,7 +169,6 @@ export default function Home() {
       <section className={styles.section2}>
         <MainMiddleScreen
           ref={(node: HTMLDivElement) => setRef(node, 'middle')}
-          middleScreenRef={middleScreenRef}
         />
       </section>
       <section className={styles.section3}>
