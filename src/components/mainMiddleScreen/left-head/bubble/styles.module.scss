@@ -11,6 +11,7 @@ $breakpoint-mobile: 420px;
 
   @media (max-width: $breakpoint-mobile) {
     transform: translate(0%, -75%);
+    width: 50px
   }
 }
 
@@ -21,4 +22,8 @@ $breakpoint-mobile: 420px;
   transform: translate(-50%, -50%);
   width: max-content;
   font-size: clamp(10px, 3vw, 20px);
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 7px
+  }
 }

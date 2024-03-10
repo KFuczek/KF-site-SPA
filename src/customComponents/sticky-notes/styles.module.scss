@@ -33,6 +33,7 @@ $breakpoint-mobile: 420px;
   @media (max-width: $breakpoint-mobile) {
     padding: 10px 10px 20px 10px;
     margin: 8px;
+    font-family: 'Brush Script MT', cursive;
   }
 }
 
@@ -96,6 +97,6 @@ $breakpoint-mobile: 420px;
   font-size: 1.2rem;
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: clamp(10px, 3vw, 20px)
+    font-size: clamp(10px, 5vw, 20px)
   }
 }
