@@ -9,10 +9,10 @@ const MainColumn = () => {
   const note1 = {
     title: 'Tit for tat:',
     text: `Zwycieska strategia dylematu wieznia -
-    1. Bądź przyjazny, nie oszukuj jako pierwszy
+    1. Badz przyjazny, nie oszukuj jako pierwszy
     2. Wet za wet, zawsze reaguj na oszustwo
     3. Wybaczaj, po okazaniu skruchy i zadoscuczynieniu
-    4. Bądz przejrzysty w dzialaniach
+    4. Badz przejrzysty w dzialaniach
     5. Wybaczaj pierwszy, gdy dojdzie do spirali odwetow`
   };
 
@@ -20,7 +20,7 @@ const MainColumn = () => {
     title: '',
     text: `1. Nie podejmoj decyzji w smutku
         2. Nie odpowiadaj w gniewie
-        3. Nie kupuj bedąc glodnym
+        3. Nie kupuj bedac glodnym
         4. Nie obiecuj w radosci`
   };
 
