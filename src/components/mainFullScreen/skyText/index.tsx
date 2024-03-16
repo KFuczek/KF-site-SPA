@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { outrun, openSans } from '../../../fonts';
+import { outrun, openSans } from '@/src/fonts';
 
 export default function Sun() {
   return (

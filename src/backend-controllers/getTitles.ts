@@ -1,12 +1,14 @@
-import { queryItem } from '../../dataBase';
+import { queryItem } from '@/dataBase';
 import { DB_object, StandardTextItem } from '@/src/backend-controllers/types';
 
-const getTitlesFromApi = async (): Promise<StandardTextItem | null> => {
+const getTitlesFromApi = async (
+  menuName: string
+): Promise<StandardTextItem | null> => {
   let titles: DB_object<StandardTextItem> | null = null;
   const config = {
-    TableName: 'KF-texts',
+    TableName: 'Various',
     Key: {
-      Title: 'menu'
+      Title: menuName
     }
   };
   try {

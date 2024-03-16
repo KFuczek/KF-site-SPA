@@ -30,9 +30,9 @@ export default function TopBorder() {
         <div className={styles.circle} />
       </div>
       <div className={styles.buttons}>
-        <Button url={'stories'} text={'Opowiadania'} />
-        <Button url={'philosophy'} text={'Filozofia'} />
-        <Button url={'road'} text={'Droga'} />
+        <Button url={'article?type=stories'} text={'Opowiadania'} />
+        <Button url={'article?type=philosophy'} text={'Filozofia'} />
+        <Button url={'article?type=road'} text={'Droga'} />
       </div>
       <div className={`${styles.circles} ${styles.right}`}>
         <div className={styles.circle} />

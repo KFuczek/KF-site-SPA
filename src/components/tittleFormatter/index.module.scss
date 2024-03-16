@@ -29,8 +29,6 @@
 }
 
 .menuTable {
-  min-height: 300px;
-  overflow: scroll;
   .menuRow {
     width: 100%;
     height: fit-content;
@@ -38,6 +36,11 @@
       border: solid green 1px;
     }
   }
+}
+
+.tableWrapper{
+  height: 80vh;
+  overflow: auto;
 }
 
 

@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return isSSR ? null : (
     <div id={'main-navbar'} className={`${styles.navbar}`}>
-      <NeonButton2 url={'/'} name={'HOME'} />
+      <NeonButton2 url={'/#middle'} name={'HOME'} />
       <NeonButton2 name={'BACK'} />
     </div>
   );

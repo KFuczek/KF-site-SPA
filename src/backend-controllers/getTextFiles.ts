@@ -2,11 +2,12 @@ import { queryItem } from '../../dataBase';
 import { DB_object, StandardTextItem } from '@/src/backend-controllers/types';
 
 const getTextFilesFromApi = async (
+  tableName: string,
   title: string
 ): Promise<StandardTextItem | null> => {
   let text: DB_object<StandardTextItem> | null = null;
   const config = {
-    TableName: 'KF-texts',
+    TableName: tableName,
     Key: {
       Title: title
     }

@@ -3,18 +3,18 @@ import { TitlesPair } from '@/src/customComponents/biopunkTable/type';
 import { useRouter } from 'next/navigation';
 
 type PushFunc = (url: string) => void;
-const onRowClick = (name: string, pushFunc: PushFunc) => {
-  const url = `/stories/${name}`;
+const onRowClick = (name: string, type: string, pushFunc: PushFunc) => {
+  const url = `/article/${name}?type=${type}`;
   pushFunc(url);
 };
 
-const buildTable = (data: TitlesPair[], pushFunc: PushFunc) => {
+const buildTable = (data: TitlesPair[], type: string, pushFunc: PushFunc) => {
   const rows = data.map((row, index) => {
     return (
       <tr
         key={row[1]}
         className={`${styles.row}`}
-        onClick={() => onRowClick(row[1], pushFunc)}
+        onClick={() => onRowClick(row[1], type, pushFunc)}
       >
         <th className={`${styles.cell} ${styles.first} ${styles.firstRow}`}>
           {index + 1}
@@ -40,12 +40,16 @@ const buildTable = (data: TitlesPair[], pushFunc: PushFunc) => {
 };
 
 export default function BioPunkTable({
-  data
+  data,
+  type
 }: {
   data: TitlesPair[];
+  type: string;
 }): JSX.Element {
   const { push } = useRouter();
   console.log('data', data);
 
-  return <div className={styles.tableWrapper}>{buildTable(data, push)}</div>;
+  return (
+    <div className={styles.tableWrapper}>{buildTable(data, type, push)}</div>
+  );
 }

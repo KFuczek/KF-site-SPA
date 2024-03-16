@@ -54,10 +54,6 @@ export default function Home() {
     mainFullscreenRef?.current?.addEventListener('wheel', onWheel, {
       passive: false
     });
-    //  for mobile
-    // mainFullscreenRef?.current?.addEventListener('touchmove', onWheel, {
-    //   passive: false
-    // });
   };
 
   useEffect(() => {
@@ -65,6 +61,7 @@ export default function Home() {
       return;
     }
     implementCustomScrollLogic();
+    shouldScroll();
   }, [refAvailable]);
 
   useEffect(() => {
@@ -155,6 +152,13 @@ export default function Home() {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       intersectionObserver.observe(middleScreenRef.current);
+    }
+  };
+
+  const shouldScroll = () => {
+    const MIDDLE_SECTION = '#middle';
+    if (window.location.hash === MIDDLE_SECTION) {
+      middleScreenRef.current?.scrollIntoView();
     }
   };
 

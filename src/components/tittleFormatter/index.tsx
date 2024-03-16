@@ -11,7 +11,7 @@ interface TextAreaEvent extends Event {
 export type MenuParameters = [string, TitlesParameters[]];
 
 export default function TitleFormatter() {
-  const [textareaContent, setTextContent] = useState<string>('');
+  const [textAreaContent, setTextContent] = useState<string>('');
   const tableRef = useRef<HTMLTableElement>();
   let timeoutId: NodeJS.Timeout | string = '';
 
@@ -26,17 +26,6 @@ export default function TitleFormatter() {
       setTextContent(text);
     }, 1000);
   };
-  const textInput = () => {
-    return (
-      <div className={styles.customInput}>
-        <textarea
-          className={styles.input}
-          onChange={setTextFunc}
-          value={textareaContent}
-        />
-      </div>
-    );
-  };
 
   const setTableDataFunc = () => {
     const allTableRows: HTMLElement[] = tableRef.current?.children;
@@ -46,31 +35,28 @@ export default function TitleFormatter() {
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     const rows = [...allTableRows].toSpliced(0, 1) as HTMLElement[];
+
     const tableObj = rows.reduce((acc, row) => {
-      const categoryName = row.children[0].textContent;
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-      const cells = [...row.children].toSpliced(0, 1) as HTMLElement[];
+      const cells = [...row.children];
       const rowArr = cells.map(cell => {
         return cell.textContent;
       });
 
-      return {
-        ...acc,
-        [categoryName]: acc[categoryName]
-          ? // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-            [...acc[categoryName], rowArr]
-          : [rowArr]
-      };
-    }, {});
+      return [...acc, rowArr];
+    }, []);
 
     const fullTableObject = {
-      category: tableObj
+      items: tableObj
     };
 
     setTextDebounce(JSON.stringify(fullTableObject));
   };
 
   const createTable = (text: string) => {
+    if (text === '') {
+      return null;
+    }
     let jsonText: Titles | null = null;
     try {
       jsonText = JSON.parse(text) as Titles;
@@ -83,9 +69,6 @@ export default function TitleFormatter() {
     const firstRow = (
       <tr key={`first-row`} className={styles.menuRow}>
         <td className={styles.menuCell}>
-          <div contentEditable>category</div>
-        </td>
-        <td className={styles.menuCell}>
           <div contentEditable>name</div>
         </td>
         <td className={styles.menuCell}>
@@ -94,31 +77,31 @@ export default function TitleFormatter() {
         <td className={styles.menuCell}>
           <div contentEditable>abstract</div>
         </td>
+        <td className={styles.menuCell}>
+          <div contentEditable>category</div>
+        </td>
       </tr>
     );
 
-    const rows = Object.entries(jsonText.category).map(
-      ([key, value]: MenuParameters): Element[] => {
-        const data: Element[] = value.map((cell, index: number) => {
-          return (
-            <tr key={`${key}${index}`} className={styles.menuRow}>
-              <td className={styles.menuCell}>
-                <div contentEditable>{key}</div>
-              </td>
-              <td className={styles.menuCell}>
-                <div contentEditable>{cell[0]}</div>
-              </td>
-              <td className={styles.menuCell}>
-                <div contentEditable>{cell[1]}</div>
-              </td>
-              <td className={styles.menuCell}>
-                <div contentEditable>{cell[2] || ''}</div>
-              </td>
-            </tr>
-          );
-        });
-
-        return data;
+    const rows = Object.entries(jsonText.items).map(
+      ([key, cell]: MenuParameters, index): Element[] => {
+        const [title, extendedTitle, description, category] = cell;
+        return (
+          <tr key={`${key}${index}`} className={styles.menuRow}>
+            <td className={styles.menuCell}>
+              <div contentEditable>{title}</div>
+            </td>
+            <td className={styles.menuCell}>
+              <div contentEditable>{extendedTitle}</div>
+            </td>
+            <td className={styles.menuCell}>
+              <div contentEditable>{description || ''}</div>
+            </td>
+            <td className={styles.menuCell}>
+              <div contentEditable>{category}</div>
+            </td>
+          </tr>
+        );
       }
     );
 
@@ -136,7 +119,7 @@ export default function TitleFormatter() {
   const addRow = (): void => {
     let obj: Titles | null = null;
     try {
-      obj = JSON.parse(textareaContent) as Titles;
+      obj = JSON.parse(textAreaContent) as Titles;
     } catch (error) {
       console.log('error', error);
 
@@ -144,22 +127,38 @@ export default function TitleFormatter() {
     }
 
     const extendedObj = {
-      ...obj,
-      category: {
-        ...obj.category,
-        [new Date()]: [[]]
-      }
+      items: [...obj.items, ['', '', '', '']]
     };
     setTextContent(JSON.stringify(extendedObj));
   };
 
+  const getTextInput = () => {
+    return (
+      <div className={styles.inputWrapper}>
+        <div className={styles.customInput}>
+          <textarea
+            className={styles.input}
+            onChange={setTextFunc}
+            value={textAreaContent}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  const getButton = () => {
+    return <button onClick={addRow}>Add</button>;
+  };
+
+  const getTable = () => {
+    return createTable(textAreaContent);
+  };
+
   return (
     <div className={styles.body}>
-      <div className={styles.inputWrapper}>{textInput()}</div>
-      <div className={styles.line}>
-        <button onClick={addRow}>Add</button>
-      </div>
-      {createTable(textareaContent)}
+      {getTextInput()}
+      <div className={styles.line}>{getButton()}</div>
+      <div className={styles.tableWrapper}>{getTable()}</div>
     </div>
   );
 }

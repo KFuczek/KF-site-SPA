@@ -1,4 +1,4 @@
-import { queryItem } from '../../dataBase';
+import { queryItem } from '@/dataBase';
 import {
   DB_object,
   StandardTextItem,
@@ -8,7 +8,7 @@ import {
 const getQuotesFromApi = async (): Promise<StandardTextItem | null> => {
   let quotes: DB_object<StandardTextItem> | null = null;
   const config = {
-    TableName: 'KF-texts',
+    TableName: 'Various',
     Key: {
       Title: 'quotes'
     }
@@ -28,7 +28,7 @@ const getQuotesFromApi = async (): Promise<StandardTextItem | null> => {
 const getQuoteByIdFromApi = async (index: number): Promise<Quote> => {
   const defaultQuote = {
     Text: 'This is your daily quote enjoy :)',
-    Author: 'fuczkins'
+    Author: 'Fuczkins'
   };
 
   const allQuotes = (await getQuotesFromApi()) || defaultQuote;
