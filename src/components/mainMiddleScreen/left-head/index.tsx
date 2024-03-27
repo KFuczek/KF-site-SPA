@@ -3,11 +3,13 @@ import styles from './styles.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Bubble from './bubble';
+import { useRouter } from 'next/navigation';
 
 export default function LeftHeadContainer() {
   const [refAvailable, setRefAvailable] = useState(false);
   const leftHeadContainerRef = useRef<HTMLDivElement | null>(null);
   const leftHeadRef = useRef<HTMLDivElement | null>(null);
+  const { push } = useRouter();
 
   const setRef = useCallback((node: HTMLDivElement | null, ref: any) => {
     /* eslint-disable */
@@ -47,6 +49,7 @@ export default function LeftHeadContainer() {
       <div
         ref={node => setRef(node, leftHeadRef)}
         className={`${styles.leftHeadAnimation}`}
+        onClick={() => push('/xd')}
       >
         <Image
           src="/head.png"
