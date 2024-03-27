@@ -35,6 +35,9 @@ const Card = () => {
       <div className={`${styles.description} ${luminari.className}`}>
         <a href="article?type=road">[pseudo]~polityk</a>
       </div>
+      <div className={`${styles.description} ${luminari.className}`}>
+        <a href="article?type=religion">[pato]~kaznodzieja</a>
+      </div>
       <div className={`${styles.socialMediaLink} ${luminari.className}`}>
         <a
           href="https://www.youtube.com/@Pan_Fuczkowiecki_drugi"
