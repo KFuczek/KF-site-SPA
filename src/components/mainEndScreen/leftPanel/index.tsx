@@ -27,16 +27,16 @@ const Card = () => {
         <span>Fuczkowiecki</span>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        <a href="/article?type=stories">[pseudo]~pisarz</a>
+        <a href="/article/stories">[pseudo]~pisarz</a>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        <a href="/article?type=philosophy">[pseudo]~filozof</a>
+        <a href="/article/philosophy">[pseudo]~filozof</a>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        <a href="article?type=road">[pseudo]~polityk</a>
+        <a href="article/road">[pseudo]~polityk</a>
       </div>
       <div className={`${styles.description} ${luminari.className}`}>
-        <a href="article?type=religion">[pato]~kaznodzieja</a>
+        <a href="article/religion">[pato]~kaznodzieja</a>
       </div>
       <div className={`${styles.socialMediaLink} ${luminari.className}`}>
         <a

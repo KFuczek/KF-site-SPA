@@ -7,17 +7,11 @@ import { getHTTPGetWithLocalStorage } from '@/src/helpers/url-helpers';
 import { TextObject } from '@/src/types/backendTextTypes';
 
 export default function Story() {
-  const params = useParams();
+  const { type, title } = useParams();
   const [text, setText] = useState('');
   const [extendedTitle, setTitle] = useState('');
 
-  const { title } = params;
-
   useEffect(() => {
-    const queryString = window.location.search;
-
-    const type = new URLSearchParams(queryString).get('type') || '';
-
     const parameters = new URLSearchParams({
       title,
       type

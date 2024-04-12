@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 type PushFunc = (url: string) => void;
 const onRowClick = (name: string, type: string, pushFunc: PushFunc) => {
-  const url = `/article/${name}?type=${type}`;
+  const url = `/article/${type}/${name}`;
   pushFunc(url);
 };
 
@@ -47,7 +47,6 @@ export default function BioPunkTable({
   type: string;
 }): JSX.Element {
   const { push } = useRouter();
-  console.log('data', data);
 
   return (
     <div className={styles.tableWrapper}>{buildTable(data, type, push)}</div>
