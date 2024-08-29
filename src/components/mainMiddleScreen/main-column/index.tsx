@@ -18,7 +18,7 @@ const MainColumn = () => {
 
   const note2 = {
     title: '',
-    text: `1. Nie podejmoj decyzji w smutku
+    text: `1. Nie podejmuj decyzji w smutku
         2. Nie odpowiadaj w gniewie
         3. Nie kupuj bedac glodnym
         4. Nie obiecuj w radosci`
