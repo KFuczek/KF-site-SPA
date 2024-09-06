@@ -28,7 +28,8 @@ const MainColumn = () => {
     title: '',
     text: `¯\\_(ⱺ.ⱺ)_/¯     (งT‿T)ง
         (╭☞ᚖ ͜ʖᚖ)╭☞
-     (∩■ᨓ■)⊃━☆ﾟ.*      ╭∩╮(  ͯ_  ͯ)╭∩╮ `
+     (∩■ᨓ■)⊃━☆ﾟ.*      ╭∩╮(  ͯ_  ͯ)╭∩╮
+      Kiedy ostatni raz zrobiłeś coś pięknego?`
   };
 
   return (
