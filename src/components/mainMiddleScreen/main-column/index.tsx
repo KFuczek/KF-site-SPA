@@ -25,11 +25,10 @@ const MainColumn = () => {
   };
 
   const note3 = {
-    title: '',
+    title: 'Kiedy ostatni raz zrobiłeś coś pięknego?',
     text: `¯\\_(ⱺ.ⱺ)_/¯     (งT‿T)ง
         (╭☞ᚖ ͜ʖᚖ)╭☞
-     (∩■ᨓ■)⊃━☆ﾟ.*      ╭∩╮(  ͯ_  ͯ)╭∩╮
-      Kiedy ostatni raz zrobiłeś coś pięknego?`
+     (∩■ᨓ■)⊃━☆ﾟ.*  ╭∩╮(  ͯ_  ͯ)╭∩╮`
   };
 
   return (
