@@ -1,11 +1,5 @@
 import styles from './styles.module.scss';
-
-interface StickyNotesProps {
-  note: {
-    title: string;
-    text: string;
-  };
-}
+import { StickyNotesProps } from './types';
 
 const StickyNotes = ({ note }: StickyNotesProps): JSX.Element => {
   const { text } = note;

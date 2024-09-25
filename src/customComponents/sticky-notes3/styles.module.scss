@@ -4,6 +4,7 @@ $breakpoint-mobile: 420px;
   position: relative;
   background: linear-gradient(to bottom right, #c2d0ea, 20%, rgba(255, 255, 255, 0)), #d5e0f9;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: "Caveat", cursive;
@@ -38,4 +39,26 @@ $breakpoint-mobile: 420px;
   border-right: 1px dotted #b7b49d;
   border-left: 1px dotted #b7b49d;
   opacity: 0.5;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  @media (max-width: $breakpoint-mobile) {
+    font-family: cursive;
+    font-size: clamp(10px, 5vw, 20px);
+  }
+}
+
+.notes {
+  color: #333;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.2rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: clamp(8px, 4vw, 15px);
+    font-family: cursive;
+  }
 }

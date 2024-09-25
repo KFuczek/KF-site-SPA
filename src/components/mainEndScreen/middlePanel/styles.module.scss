@@ -1,0 +1,24 @@
+$breakpoint-mobile: 420px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #F3E5CE;
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
+}
+
+.videoTitle {
+    font-size: 2rem;
+    margin: 20px;
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 1rem;
+    }
+}
+
+.video {
+  width: 60%;
+}

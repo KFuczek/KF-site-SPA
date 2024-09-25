@@ -3,7 +3,6 @@ import styles from './styles.module.scss';
 import StickyNote from '../../../customComponents/sticky-notes';
 import StickyNote2 from '../../../customComponents/sticky-notes2';
 import StickyNote3 from '../../../customComponents/sticky-notes3';
-import EndScreen from '@/src/components/mainEndScreen';
 
 const MainColumn = () => {
   const note1 = {
@@ -20,13 +19,16 @@ const MainColumn = () => {
     title: '',
     text: `1. Nie podejmuj decyzji w smutku
         2. Nie odpowiadaj w gniewie
-        3. Nie kupuj bedac glodnym
+        3. Nie kupuj będąc glodnym
         4. Nie obiecuj w radosci`
   };
 
   const note3 = {
     title: 'Kiedy ostatni raz zrobiłeś coś pięknego?',
-    text: `¯\\_(ⱺ.ⱺ)_/¯     (งT‿T)ง
+    text: `
+    1. Stworzyć coś pieknego
+    2. Zrobić coś czego jeszcze nie robiłem
+    3. ¯\\_(ⱺ.ⱺ)_/¯     (งT‿T)ง
         (╭☞ᚖ ͜ʖᚖ)╭☞
      (∩■ᨓ■)⊃━☆ﾟ.*  ╭∩╮(  ͯ_  ͯ)╭∩╮`
   };

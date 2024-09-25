@@ -85,7 +85,7 @@ $breakpoint-mobile: 420px;
 .title {
   height: fit-content;
   @media (max-width: $breakpoint-mobile) {
-
+    font-family: cursive;
   }
 }
 
@@ -97,6 +97,7 @@ $breakpoint-mobile: 420px;
   font-size: 1.2rem;
 
   @media (max-width: $breakpoint-mobile) {
-    font-size: clamp(10px, 5vw, 20px)
+    font-size: clamp(10px, 5vw, 20px);
+    font-family: cursive;
   }
 }
