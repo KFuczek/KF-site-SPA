@@ -1,0 +1,29 @@
+$breakpoint-mobile: 420px;
+
+.scrollIndicator {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border: solid red 1px;
+  background-color: #333;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.2);
+  opacity: 0;
+
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 10px;
+    right: 5px;
+  }
+}
+
+.visible {
+  opacity: 1;
+  transform: scale(1);
+}

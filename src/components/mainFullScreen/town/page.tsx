@@ -63,7 +63,6 @@ export default function Town() {
     ] as HTMLElement[];
     const randomSortedBuildings = shuffle<HTMLElement>(towns);
 
-    console.dir(randomSortedBuildings);
     return randomSortedBuildings as unknown as ReactNode;
   };
 

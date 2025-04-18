@@ -3,23 +3,34 @@ $breakpoint-mobile: 420px;
 .container {
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: #FDF6E3;
   height: 100%;
   overflow-y: scroll;
 }
 
 .textContainer {
-  background-color: black;
   white-space: pre-line;
-  font-family: Avenir, Arial, serif;
+  font-family: Georgia;
   font-size: 1.25rem;
-  color: white;
-  line-height: 1.25em;
+  color: #333333;
+  line-height: 1.6em;
   letter-spacing: .05em;
-  margin-left: 5%;
-  width: 90%;
+  margin: 0 5%;
+  width: 50%;
+  min-width: 900px;
   height: fit-content;
   padding-bottom: 100px;
+
+  @media (max-width: $breakpoint-mobile) {
+    min-width: unset;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.16px;
+    line-height: 1.5em;
+    margin: 0 0 0 20px;
+   // font-family: Open Sans,sans-serif,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial;
+  }
 }
 
 .title {
@@ -50,6 +61,13 @@ $breakpoint-mobile: 420px;
 }
 
 .scrollLine {
-  width: 10%;
+  width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 20px;
+  }
 }
