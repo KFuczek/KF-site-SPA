@@ -30,7 +30,10 @@ const StoryView = ({ text, title }: { text: string; title: string }) => {
     <div className={styles.container} ref={container}>
       <div className={styles.textContainer}>
         <div className={styles.title}>{title} </div>
-        <div className={styles.text}> {text}</div>
+        <div
+          className={styles.text}
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
       </div>
       <div className={styles.scrollLine}>
         <ScrollIndicator scrollPercentage={scrollPercent} />
